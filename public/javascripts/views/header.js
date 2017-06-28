@@ -59,6 +59,7 @@ var app = app || {};
         'background-color': backgroundInfo.color,
         'background-image': (backgroundInfo.image) ? 'url(/' + backgroundInfo.image + ')' : '',
         'background-size': backgroundInfo.size,
+        'background-attachment': 'fixed',
       }).toggleClass('dark-font', backgroundInfo.darkFont);
       this.updateBackgroundListener();
     },
