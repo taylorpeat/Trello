@@ -1,0 +1,7 @@
+{{#each lists }}
+  {{#if (equal id ../currentListId) }}
+    <option selected class="small-option" value="{{ id }}"><span>{{ title }} (current)</span></option>
+  {{else}}
+    <option value="{{ id }}"><span>{{ title }}</span></option>
+  {{/if }}
+{{/each }}

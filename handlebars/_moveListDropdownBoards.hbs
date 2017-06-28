@@ -1,0 +1,7 @@
+{{#each boards }}
+  {{#if (equal id ../currentBoardId)}}
+    <option selected="selected" class="small-option" value="{{ id }}"><span>{{ title }}</span></option>
+  {{else}}  
+    <option class="small-option" value="{{ id }}"><span>{{ title }}</span></option>
+  {{/if }}
+{{/each }}

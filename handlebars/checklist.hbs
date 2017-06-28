@@ -1,0 +1,25 @@
+<h2 class="checklist-icon icon">{{ title }}</h2>
+<ul class="horiz-list">
+  <li>Hide completed items
+  </li><li>Show completed items ({{completedItems checklistItems }})
+  </li><li>Delete...
+  </li>
+</ul>
+<form class="checklist-icon icon">
+  <textarea class="textarea-toggle" rows="1">{{ title }}</textarea>
+  <div>
+    <div class="button" value="Save">Save</div><i class="x-icon icon"></i>
+  </div>
+</form>
+<p id="description-edit-options" class="hidden">You have unsaved edits on this field. <span class="link edit-button">View edits</span> - <span class="link discard-button">Discard</span></p>
+{{>progressBar }}
+<ul class="checklist"></ul>
+<form>
+  <textarea placeholder="Add an item..." class="dropdown-input focus-only"></textarea>
+  <div>
+    <input type="submit" class="button" value="Add"><i class="x-icon icon"></i>
+    <div class="light-button">
+      <i class="more-icon icon"></i>
+    </div>
+  </div>
+</form>

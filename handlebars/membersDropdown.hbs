@@ -1,0 +1,12 @@
+<h2>Members
+  <i class="x-icon sm-icon"></i>
+  {{#if backArrow }}
+    <i class="back-icon sm-icon"></i>
+  {{/if }}
+</h2>
+<div>
+  <input type="text" class="dropdown-input" placeholder="Search members">
+  <div class="members-search-results">
+    {{> membersDropdownMembers this }}
+  </div>
+</div>

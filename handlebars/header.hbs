@@ -1,0 +1,23 @@
+<ul>
+  <li id="title">{{ board.title }}
+  </li><li class="star-icon icon{{#if board.favorite }} selected{{/if }}">
+  {{#if (equal board.visibility 'private') }}
+    </li><li class="private private-icon icon">Private</li>
+  {{else if (equal board.visibility 'team') }}
+    </li><li class="private people-icon icon">Team</li>
+  {{else }}
+    </li><li class="private globe-icon icon">Public</li>
+  {{/if }}
+</ul>
+<div class="menu"><i class="more-icon sm-icon"></i>Show Menu
+</div>
+{{#if board.subscribed }}
+<div class="subscribed">
+  <i class="sub-icon sm-icon"></i>Subscribed
+</div>
+{{/if }}
+{{#if filter }}
+<div class="filter-header">
+  <i class="filter-icon sm-icon"></i><span>Filtering is on.</span><i class="x-icon sm-icon"></i>
+</div>
+{{/if}}

@@ -1,0 +1,18 @@
+<h2>Move List
+  <i class="x-icon sm-icon"></i>
+  <i class="back-icon sm-icon"></i>
+</h2>
+<form>
+  <label class="dropdown-select-label">
+    <span>Board</span>
+    <select name="board-titles" id="board-titles" class="dropdown-select">
+      {{> moveListDropdownBoards }}
+    </select>
+  </label><label class="dropdown-select-label">
+    <span>Position</span>
+    <select name="board-positions" id="board-positions" class="dropdown-select">
+      {{> moveListDropdownPositions }}
+    </select>
+  </label>
+  <input type="submit" class="button" value="Move">
+</form>

@@ -1,0 +1,27 @@
+{{#if labels }}
+  <ul class="label-list">
+    {{#each labels }}
+      <li>
+        <div class="{{ className }} colorblindable" data-id={{ id }}>
+          {{#if (included ../labelIds id)}}
+            <i class="check-icon sm-icon"></i>
+          {{/if}}
+        </div>
+        <div class="label-background {{ className }}"></div>
+        <div class="label-background-overlay"></div>
+        <i class="edit-icon icon not-implemented"></i>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <div class="empty">No Results</div>
+{{/if}}
+<ul class="light-list">
+  {{#if labels.[0] }}
+    <li class="not-implemented">Create a new label</li>
+  {{else if filter }}
+    <li class="newLabel">Create a new "{{ filter }}" label</li>
+  {{/if}}
+  <hr>
+  <li class="toggleColorblind">Enable color blind friendly mode.</li>
+</ul>

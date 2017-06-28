@@ -1,0 +1,20 @@
+<h2>Change Visibility
+  <i class="x-icon sm-icon"></i>
+</h2>
+<ul class="privacy-list">
+  <li data-visibility="private">
+    <i class="private-icon sm-icon"></i>Private
+    {{#if private }}<i class="check-icon sm-icon"></i>{{/if }}
+    <p>The board is private. Only people added to the board can view and edit it.</p>
+  </li>
+  <li data-visibility="team">
+    <i class="people-icon sm-icon"></i>Team
+    {{#if team }}<i class="check-icon sm-icon"></i>{{/if }}
+    <p>The board is visible to members of the team. Only people added to this board can edit it. The board must be added to a team to enable this.</p>
+  </li>
+  <li data-visibility="public">
+    <i class="globe-icon sm-icon"></i>Public
+    {{#if public }}<i class="check-icon sm-icon"></i>{{/if }}
+    <p>The board is public. it's visible to anyone with the link and will show up in search engines like Google. Only people added to the board can edit it.</p>
+  </li>
+</ul>

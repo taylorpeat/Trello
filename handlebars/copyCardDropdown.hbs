@@ -1,0 +1,33 @@
+<h2>Copy Card
+  <i class="x-icon sm-icon"></i>
+</h2>
+<form>
+  <label for="copy-card-title">Title</label>
+  <textarea name="card-title" class="dropdown-input" id="copy-card-title">{{ currentCard.title }}</textarea>
+  {{#if currentCard.hasCopyItems }}
+    <label>Keep...</label>
+    <fieldset class="checkboxes">
+      {{> copyCardItems }}
+    </fieldset>
+  {{/if }}
+  <label>Copy to...</label>
+  <fieldset class="select-menus">  
+    <label class="dropdown-select-label">
+      <span>Board</span>
+      <select name="board-title" id="board-title" class="dropdown-select">
+        {{> moveListDropdownBoards }}
+      </select>
+    </label><label class="dropdown-select-label">
+      <span>List</span>
+      <select name="list-title" id="list-title-select" class="dropdown-select">
+        {{> dropdownLists }}
+      </select>
+    </label><label class="dropdown-select-label">
+      <span>Position</span>
+      <select name="card-position" id="card-positions" class="dropdown-select">
+        {{> dropdownCardPositions }}
+      </select>
+    </label>
+  </fieldset>
+  <input type="submit" class="button" value="Create Card">
+</form>

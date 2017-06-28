@@ -1,0 +1,13 @@
+<h2>Move All Cards in List
+  <i class="x-icon sm-icon"></i>
+  <i class="back-icon sm-icon"></i>
+</h2>
+<ul>
+  {{#each lists }}
+    {{#if (equal id ../currentList.id)}}
+      <li class="inactive">{{ title }} (current)</li>
+    {{else}}
+      <li data-id={{ id }}>{{ title }}</li>
+    {{/if}}
+  {{/each}}
+</ul>

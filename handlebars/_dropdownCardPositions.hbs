@@ -1,0 +1,10 @@
+{{#each cards }}
+  {{#if (equal id ../currentCardId )}}
+    <option selected="selected" value="">{{inc @index }}</option>
+  {{else}}  
+    <option value="{{ id }}">{{inc @index }}</option>
+  {{/if}}
+{{/each }}
+{{#if notCurrentList}}
+  <option value="last-slot">{{inc cards.length}}</option>
+{{/if}}

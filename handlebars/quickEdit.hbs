@@ -1,0 +1,37 @@
+{{!-- <div class="mini-modal"> --}}
+  <div class="card">
+    {{#each attachments }}
+      {{#if cover }}
+        <img src="/{{ src }}">
+      {{/if }}
+    {{/each }}
+    <div class="card-info">
+      {{> cardLabels }}
+    </div>
+    <form id="quickEditForm">
+      <textarea>{{ title }}</textarea>
+    </form>
+    <div class="card-icons">
+      {{#if subscribed }}
+      <i class="sub-icon sm-icon">
+      </i>{{/if}}{{#if renderDate }}<i class="clock-icon sm-icon overdue">{{ renderDate.month }} {{ renderDate.day }}
+      </i>{{/if}}{{#if description }}<i class="description-icon sm-icon">
+      </i>{{/if}}{{#if comments }}<i class="comment-icon sm-icon">{{ totalComments }}
+      </i>{{/if}}{{#if attachments }}<i class="attachment-icon sm-icon">{{ totalAttachments }}
+      </i>{{/if}}{{#if checklists }}<i class="checklist-icon sm-icon">{{ completedChecklists }}/{{ totalChecklists }}
+      </i>{{/if}}
+    </div>
+    <div class="members">
+      {{> cardMembers }}
+    </div>
+  </div>
+  <input form="quickEditForm" type="submit" class="button" value="Save">
+  <aside>
+    <a class="label-icon sm-icon">Edit Labels</a>
+    <a class="person-icon sm-icon">Change Members</a>
+    <a class="forward-icon sm-icon">Move</a>
+    <a class="card-icon sm-icon">Copy</a>
+    <a class="clock-icon sm-icon not-implemented">Change Due Date</a>
+    <a class="file-icon sm-icon">Archive</a>
+  </aside>
+{{!-- </div> --}}

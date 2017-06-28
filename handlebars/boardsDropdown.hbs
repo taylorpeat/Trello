@@ -1,0 +1,48 @@
+<input type="text" class="dropdown-input" placeholder="Find boards by name...">
+<dl>
+  {{#if starredBoards }}
+    <dt data-board-type="starred"{{#if starredHidden }}class="collapsed"{{/if }}>
+      <i class="star-icon sm-icon"></i>
+      Starred Boards
+      <i class="plus-icon icon"></i>
+      <i class="dash-icon icon"></i>
+    </dt>
+    <div>
+      {{#each starredBoards }}
+        {{> boardDropdownBoard }}
+      {{/each }}
+    </div>
+  {{/if }}
+  {{#if recentBoards }}
+    <dt data-board-type="recent"{{#if recentHidden }}class="collapsed"{{/if }}>
+      <i class="clock-icon sm-icon"></i>
+      Recent Boards
+      <i class="plus-icon icon"></i>
+      <i class="dash-icon icon"></i>
+    </dt>
+    <div>
+    {{#each recentBoards }}
+      {{> boardDropdownBoard title=this.title background=this.background id=this.id favorite=this.favorite recent='true' }}
+    {{/each }}
+    </div>
+  {{/if }}
+  {{#if personalBoards }}
+    <dt data-board-type="personal"{{#if personalHidden }}class="collapsed"{{/if }}>
+      <i class="trello-icon sm-icon"></i>
+      Personal Boards
+      <i class="plus-icon icon"></i>
+      <i class="dash-icon icon"></i>
+    </dt>
+    <div>
+      {{#each personalBoards }}
+        {{> boardDropdownBoard }}
+      {{/each }}
+    </div>
+  {{/if }}
+</dl>
+<ul class="boards-options">
+  <li class="not-implemented">Create new board...
+  </li><li class="not-implemented">Always keep this menu open.
+  </li><li class="not-implemented">See closed boards...
+  </li>
+</ul>

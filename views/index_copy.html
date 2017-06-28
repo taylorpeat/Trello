@@ -1,0 +1,1434 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="../public/stylesheets/main.css" type="text/css">
+    <script src="../public/javascripts/vendor/all.js"></script>
+    <script src="../public/javascripts/handlebars_templates.js"></script>
+    <scritp src="../public/data/seed_data.js"></script>
+    <meta charset="UTF-8" />
+  </head>
+  <body class="shifted">
+
+    
+    <!-- NAV -->
+
+    <nav>
+      <ul>
+        <li class="boards trello-icon icon">Boards
+        </li><li class="search-container">
+          <div class="search search-icon icon"></div>
+          <div class="active-search">
+            <div><input type="text"></input></div>
+            <i class="x-icon icon"></i>
+            <i class="goto-icon icon"></i>
+          </div>
+        </li>
+      </ul>
+      <h1>Trello</h1>
+      <ul class="user-info">
+        <li class="create-icon icon">
+        </li><li class="split-button-1">TP
+        </li><li class="split-button-2">TP1
+        </li><li class="info-icon icon">
+        </li><li class="notifications-icon icon">
+        </li>
+      </ul>
+      <div id="boards-dropdown" class="hidden">
+        <input type="text" class="dropdown-input" placeholder="Find boards by name...">
+        <dl>
+          <dt>
+            <i class="clock-icon sm-icon"></i>
+            Recent Boards
+            <i class="plus-icon icon"></i>
+          </dt>
+          <dd>
+            <div>My Title
+              <i class="star-icon icon"></i>
+              <i class="x-icon icon"></i>
+            </div>
+          </dd>
+          <dt>
+            <i class="trello-icon sm-icon"></i>
+            Personal Boards
+            <i class="dash-icon icon"></i>
+          </dt>
+          <dd>
+            <div>My Title
+              <i class="star-icon icon"></i>
+            </div>
+          </dd>
+        </dl>
+        <ul>
+          <li>Create new board...
+          </li><li>Always keep this menu open.
+          </li><li>See closed boards...
+          </li>
+        </ul>
+      </div>
+      <div id="search-dropdown" class="dropdown hidden">
+        <h1>Saved Searches</h1>
+        <div> 
+          <p>My Cards <span>@me</span></p>
+        </div>
+        <p>
+          Refine your search with operators like @member, #label, is:archived, and has:attachments. <span class="link">Learn more...</span>
+        </p>
+        <h1>Looking for help using Trello?</h1>
+        <p>
+          Visit <span class="link">our help site</span> or read the <span class="link">getting started guide</span>
+        </p>
+      </div>
+      <div id="create-dropdown" class="dropdown hidden">
+        <h2>Create
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <ul>
+          <li>Create Board...
+            <p>A board is a collection of cards ordered in a list of lists. Use it to manage a project, track a collection, or organize anything.</p>
+          </li>
+          <li>Create Personal Team...
+            <p>A team is a group of boards and people. Use it to group boards in your company, team, or family.</p>
+          </li>
+          <li>Create Business Team...
+            <p>With Business Class, your team has more security, administrative controls and superpowers.</p>
+          </li>
+        </ul>
+      </div>
+      <div id="profile-dropdown" class="dropdown hidden">
+        <h2>TP1 (tp15)
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <ul>
+          <li>Profile</li>
+          <li>Cards</li>
+          <li>Settings</li>
+          <hr>
+          <li>Help</li>
+          <li>Shortcuts</li>
+          <li>Change Langauge...</li>
+          <hr>
+          <li>Log Out</li>
+        </ul>
+      </div>
+      <div id="info-dropdown" class="dropdown hidden">
+        <h2>Information
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <figure>
+          <img src="../public/images/info.png">
+          <figcaption>Join A Webinar To Take Your Productivity To The Next Level</figcaption>
+        </figure>
+        <p>Get a new tip.</p>
+        <hr>
+        <ul>
+          <li>Tour
+          </li><li>Pricing
+          </li><li>Apps
+          </li><li>Blog
+          </li><li>More...
+          </li>
+        </ul>
+      </div>
+      <div id="notifications-dropdown" class="dropdown hidden">
+        <h2>Notifications
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <div>
+          <i class="clock-icon icon"></i>
+          <p>
+            <span class="link">Add all the cards and lists you need.</span> on <span class="link">My Title</span> was due Oct 29 at 12:00 PM <small>Oct 28 at 12:03 PM</small>
+          </p>
+        </div>
+        <ul>
+          <li>See All Notifications</li>
+          <li>Change Notification Email Frequency</li>
+          <li>Allow Desktop Notifications</li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <!-- HEADER -->
+
+    <header>
+      <ul>
+        <li id="title">My Title
+        </li><li class="star-icon icon">
+        </li><li class="private private-icon icon">Private</li>
+      </ul>
+      <div class="menu"><i class="more-icon sm-icon"></i>Show Menu
+      </div>
+      <div class="subscribed">
+        <i class="sub-icon sm-icon"></i>Subscribed
+      </div>
+      <div class="filter-header">
+        <i class="filter-icon sm-icon"></i><span>Filtering is on.</span><i class="x-icon sm-icon"></i>
+      </div>
+      <div id="title-dropdown" class="dropdown hidden">
+        <h2>Rename Board
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <label>Name</label>
+        <input type="text" class="dropdown-input" value="My Title">
+        <div class="button">Rename</div>
+      </div>
+      <div id="private-dropdown" class="dropdown hidden">
+        <h2>Change Visibility
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <ul class="privacy-list">
+          <li>
+            <i class="private-icon sm-icon"></i>Private
+            <i class="check-icon sm-icon"></i>
+            <p>The board is private. Only people added to the board can view and edit it.</p>
+          </li>
+          <li>
+            <i class="people-icon sm-icon"></i>Team
+            <p>The board is visible to members of the team. Only people added to this board can edit it. The board must be added to a team to enable this.</p>
+          </li>
+          <li>
+            <i class="globe-icon sm-icon"></i>Public
+            <p>The board is public. it's visible to anyone with the link and will show up in search engines like Google. Only people added to the board can edit it.</p>
+          </li>
+        </ul>
+      </div>
+      <div id="subscribed-dropdown" class="dropdown hidden">
+        <h2>
+          Unsubscribe?
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <div>
+          <p>You can re-subscribe via the board menu.</p>
+          <div class="button">Unsubscribe</div>
+        </div>
+      </div>
+    </header>
+
+    <div id="menu-sidebar" class="main">
+      <i class="back-icon icon"></i>
+      <i class="x-icon icon"></i>
+      <div id="archive" class="hidden">
+        <h1>Archive</h1>
+        <div class="menu-contents">
+          <input class="dropdown-input" placeholder="Search archive..."><a class="light-button">Switch to lists</a>
+          <div class="hidden">No archived cards</div>
+          <ul class="">
+            <li>
+              <div class="arch-card">
+                <p>This is a card. Drag it onto "Tried It" to show it's done.</p>
+                <small><i class="file-icon sm-icon"></i> Archived</small>
+              </div>
+              <span>Send to Board</span> - <span>Delete</span>
+            </li>
+            <li>
+              <div class="arch-card">
+                <p>Use the + in the top menu to make your first board now.</p>
+                <small><i class="file-icon sm-icon"></i> Archived</small>
+              </div>
+              <span>Send to Board</span> - <span>Delete</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="labels" class="hidden">
+        <h1>Labels</h1>
+        <div class="menu-contents">
+          <input class="dropdown-input" placeholder="Search labels...">
+          <ul class="label-list">
+            <li>
+              <div class="green"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="yellow"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="orange"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="red"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="purple"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="blue"></div>
+              <i class="edit-icon icon"></i></li>
+          </ul>
+          <ul class="light-list">
+            <li>Create a new label</li>
+            <hr>
+            <li>Enable color blind friendly mode.</li>
+          </ul>
+        </div>
+      </div>
+      <div id="filter" class="hidden">
+        <h1>Filter Cards</h1>
+        <div class="menu-contents">
+          <input class="dropdown-input">
+          <p>Type to filter by term or search for labels, members, or due times.</p>
+          <hr>
+          <ul class="filter-list tall">
+            <li class="grey dark">No Labels</li>
+            <li class="green selected">green label (default)</li>
+            <li class="yellow">yellow label (default)</li>
+            <li class="orange">orange label (default)</li>
+            <li class="red">red label (default)</li>
+            <li class="purple">purple label (default)</li>
+            <li>Show all labels (1 hidden)</li>
+            <hr>
+            <li class="dark"><i class="card-member">?</i>Unassigned</li>
+            <li class="dark"><i class="card-member">TP</i>TP1 (tp15)</li>
+            <li class="dark"><i class="card-member">DG</i>DG</li>
+            <hr>
+          </ul>
+          <ul class="filter-list">
+            <li>Due in the next day</li>
+            <li>Due in the next week</li>
+            <li>Due in the next month</li>
+            <li>Overdue</li>
+            <li>Has no due date</li>
+            <hr>
+            <li>Matches any label and any member</li>
+            <li>Matches all labels and all members</li>
+            <hr>
+            <li>Clear Filter</li>
+          </ul>
+        </div>
+      </div>
+      <div id="menu-backgrounds" class="slide">
+        <h1>Change Background</h1>
+        <div class="menu-contents">
+          <ul class="bg-samples">
+            <li>
+              <span class="dark-cyan"></span>
+            </li><li>
+              <span class="orange"></span>
+            </li><li>
+              <span class="olive"></span>
+            </li><li>
+              <span class="red"></span>
+            </li><li>
+              <span class="pink"></span>
+            </li><li>
+              <span class="violet"></span>
+            </li><li>
+              <span class="green"></span>
+            </li><li>
+              <span class="turquoise"></span>
+            </li><li>
+              <span class="gray"></span>
+            </li>
+          </ul>
+          <h3>Photos</h3>
+          <ul class="bg-samples">
+            <li>
+              <span class="bg-baells">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-hubble">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-rain">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-dew">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-snowflakes">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-new-york">
+                <div class="bg-cover">Options</div>
+              </span>
+              <div class="bg-options dropdown hidden">
+                <h2>Background Options
+                  <i class="x-icon sm-icon"></i>
+                </h2>
+                <ul>
+                  <li class="title">Display Type</li>
+                  <li>Cover
+                    <i class="check-icon sm-icon"></i>
+                  </li>
+                  <li>Tile</li>
+                  <div></div>
+                  <li class="title">Board Text</li>
+                  <li>Light
+                    <i class="check-icon sm-icon"></i>
+                  </li>
+                  <li>Dark</li>
+                  <div></div>
+                  <a class="all-activity">Delete background</a>
+                </ul>
+              </div>
+              <div id="members-dropdown" class="dropdown">
+                <h2>Members
+                  <i class="x-icon sm-icon"></i>
+                </h2>
+                <input type="text" class="dropdown-input" placeholder="e.g. taco@trello.com">
+                <p>Search for a person in Trello by name or email address, or enter an email address to invite someone new.</p>
+                <hr>
+                <p class="light-button">Invite people by giving them a special link...</p>
+              </div>
+            </li><li>
+              <span class="bg-glen-canyon">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-maldives">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-pond">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li>
+          </ul>
+          <h3>Patterns and Textures</h3>
+          <ul class="bg-samples">
+            <li>
+              <span class="bg-purty-wood">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-irongrip">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-wild-oliva">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-hex">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-wave">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-bricks">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-random-grey">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-purple">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li><li>
+              <span class="bg-orange">
+                <div class="bg-cover">Options</div>
+              </span>
+            </li>
+          </ul>
+          <h3>Custom</h3>
+          <ul class="bg-samples locked">
+            Get <span class="private-icon icon">Business Class.</span>
+          </ul>
+        </div>
+      </div>
+      <div id="activity" class="hidden">
+        <h1>Activity</h1>
+        <div class="menu-contents">
+          <div class="button-container">
+            <a class="button button-active">All
+            </a><a class="button">Comments
+            </a>
+          </div>
+          <ul class="activity-list">
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> changed the background of this board <small>yesterday at 4:53 PM</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> sent <span class="link">Use the + in the top menu to make your first board now.</span> to the board <small>4 hours ago</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> archived <span class="link">Use the + in the top menu to make your first board now.</span> <small>4 hours ago</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> changed the background of this board <small>5 hours ago</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> changed the background of this board <small>6 hours ago</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> changed the background of this board <small>yesterday at 10:23 PM</small>
+              </p>
+            </li>
+          </ul>
+          <a class="all-activity">View all activity...</a>
+        </div>
+      </div>
+      <div id="more" class="hidden">
+      <h1>More</h1>
+      <div class="menu-contents">
+        <ul class="menu-list">
+          <li class="gear-icon menu-icon">Settings</li>
+          <li class="label-icon menu-icon">Labels</li>
+          <li class="file-icon menu-icon">Archived Items</li>
+          <hr>
+          <li class="email-icon menu-icon">Email-to-board Settings</li>
+          <li class="sub-icon menu-icon">Subscribe
+            <i class="check-icon sm-icon"></i>
+          </li>
+          <li class="trello-icon menu-icon">Copy Board
+            <div id="copy-dropdown" class="dropdown hidden">
+              <h2>Copy Board
+                <i class="x-icon sm-icon"></i>
+              </h2>
+              <label>Title
+                <input type="text" class="dropdown-input" placeholder='Like "Calvinball Meetup Schedule"...'>
+              </label>
+              <label>Team</label>
+              <p>Teams make sharing and working within a group even easier. It doesn't look like you are a member of any teams. <span class="link">Create a team.</span></p>
+              <p class="hidden"><i class="private-icon sm-icon"></i> This board will be <strong>Private</strong>. <span class="link">Change</span></p>
+              <ul class="privacy-list">
+                <li>
+                  <i class="private-icon sm-icon"></i>Private
+                  <i class="check-icon sm-icon"></i>
+                  <p>The board is private. Only people added to the board can view and edit it.</p>
+                </li>
+                <li>
+                  <i class="people-icon sm-icon"></i>Team
+                  <p>The board is visible to members of the team. Only people added to this board can edit it. The board must be added to a team to enable this.</p>
+                </li>
+                <li>
+                  <i class="globe-icon sm-icon"></i>Public
+                  <p>The board is public. it's visible to anyone with the link and will show up in search engines like Google. Only people added to the board can edit it.</p>
+                </li>
+              </ul>
+              <label>
+                <input type="checkbox" checked="true">Keep Cards
+              </label>
+              <p>Activity and members will not be copied to the new board.</p>
+              <a class="button">Create</a>
+            </div>
+          </li>
+          <li class="export-icon menu-icon">Print and Export</li>
+          <hr>
+          <li class="no-icon menu-icon">Close Board...
+            <div id="close-dropdown" class="dropdown hidden">
+              <h2>
+                Close Board?
+                <i class="x-icon sm-icon"></i>
+              </h2>
+              <div>
+                <p>You can re-open the board by clicking the "Boards" menu from the header, selecting "View Closed Boards," finding the board and clicking "Re-open."</p>
+                <div class="button">Close</div>
+              </div>
+            </div>
+          </li>
+          <hr>
+        </ul>
+        <div class="board-link">
+          <span>Link to this board</span>
+          <input type="text" value="https://trello.com/b/Hw2h7nDr">
+          <p class="private-icon sm-icon">
+            Private. Only visible to members on the board.
+          </p>
+        </div>
+      </div>
+      </div>
+      <div id="menu" class="slide hidden">
+        <h1>Menu</h1>
+        <div class="menu-contents">
+          <div class="menu-members">
+            <div class="card-member admin">TP</div>
+            <div class="card-member">DG</div>
+          </div>
+          <div class="add-members">
+            <i class="add-icon sm-icon"></i>Add Members...
+          </div>
+          <hr>
+          <ul class="menu-list">
+            <li class="background-item">Change Background</li>
+            <li class="filter-icon menu-icon">Filter Cards</li>
+            <li class="power-icon menu-icon">Power-Ups</li>
+            <li class="stickers-icon menu-icon">Stickers</li>
+            <li class="more-icon menu-icon">More</li>
+            <hr>
+            <li class="activity-icon menu-icon">Activity</li>
+          </ul>
+          <ul class="activity-list">
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> changed the background of this board <small>yesterday at 4:53 PM</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> sent <span class="link">Use the + in the top menu to make your first board now.</span> to the board <small>4 hours ago</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> archived <span class="link">Use the + in the top menu to make your first board now.</span> <small>4 hours ago</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> changed the background of this board <small>5 hours ago</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> changed the background of this board <small>6 hours ago</small>
+              </p>
+            </li>
+            <li>
+              <i class="member-icon"></i>
+              <p>
+                <span class="member-name">TP1</span> changed the background of this board <small>yesterday at 10:23 PM</small>
+              </p>
+            </li>
+          </ul>
+          <a class="all-activity">View all activity...</a>
+        </div>
+      </div>
+      <div id="add-member-dropdown" class="dropdown hidden">
+        <h2>
+          Members
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <div>
+          <input type="text" class="dropdown-input" placeholder="e.g. taco@trello.com">
+          <p>Search for a person in Trello by name or email address, or enter an email address to invite someone new.</p>
+          <hr>
+          <ul class="light-list">
+            <li>Invite people by giving them a special link...</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- BOARDS -->
+
+
+
+
+    <main>
+      <div class ="list-container">
+        <div class="list">
+          <a class="more-icon sm-icon" href=""></a>
+          <i class="sub-icon sm-icon"></i>
+          <div>
+            <input type="text" class="list-title" value="Stuff to try (this is a list)">
+          </div>
+          <div class="card">
+            <i class="edit-toggle edit-icon sm-icon"></i>
+            <div class="card-info">
+              <div class="card-label green"></div>
+              <p>Add all the cards and lists you need.</p>
+            </div>
+            <div class="card-icons">
+              <i class="sub-icon sm-icon">
+              </i><i class="clock-icon sm-icon overdue">Nov 9
+              </i><i class="description-icon sm-icon">
+              </i><i class="comment-icon sm-icon">1
+              </i><i class="attachment-icon sm-icon">1
+              </i><i class="checklist-icon sm-icon">1/2
+              </i>
+            </div>
+            <div class="members">
+              <div class="member-container">
+                <div class="card-member">TP</div>
+              </div>
+              <div class="member-container">
+                <div class="card-member">DG</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <i class="edit-toggle edit-icon sm-icon"></i>
+            <div class="card-info">
+              <p>You can also see board activity, change the background and more.</p>
+            </div>
+            <div class="card-icons"></div>
+            <div class="members"></div>
+          </div>
+          <div class="card">
+            <i class="edit-toggle edit-icon sm-icon"></i>
+            <div class="card-info">
+              <p>Another list with stuff</p>
+            </div>
+            <div class="card-icons">
+              <i class="sub-icon sm-icon">
+              </i><i class="description-icon sm-icon">
+              </i><i class="clock-icon sm-icon due">Oct 28
+              </i>
+            </div>
+            <div class="members">
+              <div class="member-container">
+                <div class="card-member">TP</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <i class="edit-toggle edit-icon sm-icon"></i>
+            <div class="card-info">
+              <p>Use the + in the top menu to make your first board now.</p>
+            </div>
+            <div class="card-icons"></div>
+            <div class="members"></div>
+          </div>
+          <div class="add-dropdown hidden">
+            <textarea name="add-card"></textarea>
+            <a class="button">Add</a><i class="x-icon icon"></i>
+            <div class="add-options"><span>...</span></div>
+          </div>
+          <div>Add a card...</div>
+        </div><!--
+        --><div class="list">
+          <a class="more-icon sm-icon" href=""></a>
+          <div>
+            <input type="text" class="list-title" value="Tried it (another list)">
+          </div>
+          <a class="more-icon sm-icon" href=""></a>
+          <div class="card">
+            <i class="edit-toggle edit-toggle edit-icon sm-icon"></i>
+            <div class="card-info">
+              <p>This is a card. Drag it onto "Tried It" to show it's done.</p>
+            </div>
+            <div class="card-icons"></div>
+            <div class="members"></div>
+          </div>
+          <div>Add a card...</div>
+        </div><!--
+        --><div class="list">
+          <a class="more-icon sm-icon" href=""></a>
+          <div>
+            <input type="text" class="list-title" value="Third List">
+          </div>
+          <a class="more-icon sm-icon" href=""></a>
+          <div class="card">
+            <i class="edit-toggle edit-icon sm-icon"></i>
+            <div class="card-info">
+              <p>Add members to a board (via the sidebar) to collaborate, share and discuss.</p>
+            </div>
+            <div class="card-icons"></div>
+            <div class="members"></div>
+          </div>
+          <div class="card">
+            <i class="edit-toggle edit-icon sm-icon"></i>
+            <img src="../public/images/mascots/Bad-Robot.jpg">
+            <div class="card-info">
+              <div class="card-label green"></div>
+              <p>Cards do many cool things. Click on this card to open it and learn more...</p>
+            </div>
+            <div class="card-icons">
+              <i class="description-icon sm-icon">
+              </i><i class="attachment-icon sm-icon">3
+              </i>
+            </div>
+            <div class="members"></div>
+          </div>
+          <div>Add a card...</div>
+        </div><!--
+        --><div class="new-list">
+          <span>Add a list...</span>
+          <input type="text" placeholder="Add a list...">
+          <div>
+            <input type="submit" class="button" value="Save">
+            <i class="x-icon icon"></i>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="list-actions" class="dropdown hidden">
+        <h2>List Actions
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <ul>
+          <li>Add Card...</li>
+          <li>Copy List...</li>
+          <li>Move List...</li>
+          <li class="selected">Subscribe<i class="check-icon sm-icon"></i></li>
+          <hr>
+          <li>Move All Cards in This List...</li>
+          <li>Archive All Cards in This List...</li>
+          <hr>
+          <li>Archive This List</li>
+        </ul>       
+      </div>
+      <div id="copy-list" class="dropdown hidden">
+        <h2>Copy List
+          <i class="x-icon sm-icon"></i>
+          <i class="back-icon sm-icon"></i>
+        </h2>
+        <form>
+          <label for="copy-title">Name</label>
+          <textarea class="dropdown-input" id="copy-title">Stuff to try (this is a list)</textarea>
+          <input type="submit" class="button" value="Create List">
+        </form>
+      </div>
+      <div id="move-list" class="dropdown hidden">
+        <h2>Move List
+          <i class="x-icon sm-icon"></i>
+          <i class="back-icon sm-icon"></i>
+        </h2>
+        <form>
+          <label class="dropdown-select-label">
+            <span>Board</span>
+            <select id="board-title" class="dropdown-select">
+                <option class="small-option" value="list-1"><span>My Title</span></option>
+                <option value="list-2">Tried it (another list)</option>
+                <option value="list-3">Third List</option>
+            </select>
+          </label><label class="dropdown-select-label">
+            <span>Position</span>
+            <select class="dropdown-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+          <input type="submit" class="button" value="Move">
+        </form>
+      </div>
+      <div id="move-all" class="dropdown hidden">
+        <h2>Move All Cards in List
+          <i class="x-icon sm-icon"></i>
+          <i class="back-icon sm-icon"></i>
+        </h2>
+        <ul>
+          <li class="inactive">Stuff to try (this is a list) (current)</li>
+          <li>Tried it (another list)</li>
+          <li>Third List</li>
+        </ul>
+      </div>
+      <div id="archive-all" class="dropdown hidden">
+        <h2>
+          Archive All Cards in this List?
+          <i class="x-icon sm-icon"></i>
+          <i class="back-icon sm-icon"></i>
+        </h2>
+        <div>
+          <p>This will remove all the cards in this list from the board. To view archived cards and bring them back to the board, click "Menu" > "Archived Items."</p>
+          <div class="button">Archive All</div>
+        </div>
+      </div>
+      <div id="user-dropdown-sm" class="dropdown hidden">
+        <i class="x-icon sm-icon"></i>
+        <div>TP</div>
+        <div>
+          <h3>TP1</h3>
+          <span>@tp15</span>
+          <span class="link">Edit profile info</span>
+        </div>
+        <ul>
+          <li>Remove from Card</li>
+        </ul>
+      </div>
+      <div id="bio-dropdown" class="dropdown hidden">
+        <h2>Change Name and Bio
+          <i class="x-icon sm-icon"></i>
+          <i class="back-icon sm-icon"></i>
+        </h2>
+        <form>
+          <label for="bio-full-name">Full Name</label>
+          <input type="text" class="dropdown-input" id="bio-full-name">
+          <label for="bio-initials">Initials</label>
+          <input type="text" class="dropdown-input" id="bio-initials">
+          <label for="bio-username">Username</label>
+          <input type="text" class="dropdown-input" id="bio-username">
+          <label for="bio-bio">Bio</label>
+          <textarea class="dropdown-input" id="bio-bio"></textarea>
+          <input type="submit" class="button" value="Save">
+        </form>
+        <hr>
+        <p>Your initials are used in place of your avatar if your avatar is not set. Usernames require a minimum of 3 characters, alphanumeric only.</p>
+      </div>
+      <div id="add-options-dropdown" class="dropdown hidden">
+        <h2>Options
+          <i class="x-icon sm-icon"></i>
+        </h2>
+        <ul>
+          <li>Members...</li>
+          <li>Labels...</li>
+          <li>Position...</li>
+        </ul>     
+      </div>
+      <div id="add-options-members-dropdown" class="dropdown hidden">
+        <h2>Members
+          <i class="x-icon sm-icon"></i>
+          <i class="back-icon sm-icon"></i>
+        </h2>
+        <div>
+          <input type="text" class="dropdown-input" placeholder="Search members">
+          <ul class="filter-list tall">
+            <li class="dark selected"><i class="card-member">TP</i>TP1 (tp15)</li>
+            <li class="dark"><i class="card-member">TR</i>Trello (trello)</li>
+          </ul>
+        </div>
+      </div>
+      <div id="add-options-labels-dropdown" class="dropdown hidden">
+        <h2>Labels
+          <i class="x-icon sm-icon"></i>
+          <i class="back-icon sm-icon"></i>
+        </h2>
+        <div>
+          <input type="text" class="dropdown-input" placeholder="Search labels...">
+          <ul class="label-list">
+            <li>
+              <div class="green"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="yellow"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="orange"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="red"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="purple"></div>
+              <i class="edit-icon icon"></i></li>
+            <li>
+              <div class="blue"></div>
+              <i class="edit-icon icon"></i></li>
+          </ul>
+          <ul class="light-list">
+            <li>Create a new label</li>
+            <hr>
+            <li>Enable color blind friendly mode.</li>
+          </ul>
+        </div>
+      </div>
+      <div id="add-options-position-dropdown" class="dropdown hidden">
+        <h2>Select Position
+          <i class="x-icon sm-icon"></i>
+          <i class="back-icon sm-icon"></i>
+        </h2>
+        <div>
+          <label class="dropdown-select-label">
+            <span>List</span>
+            <select id="position-title" class="dropdown-select">
+                <option class="small-option" value="list-1"><span>Stuff to try (this is a list) (selected)</span></option>
+                <option value="list-2">Tried it (another list)</option>
+                <option value="list-3">Third List</option>
+            </select>
+          </label><label class="dropdown-select-label">
+            <span>Position</span>
+            <select class="dropdown-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </main>
+    <div class="mini-modal hidden">
+      <div class="card">
+        <div class="card-info">
+          <div class="card-label green"></div>
+        </div>
+        <form>
+          <textarea>Add all the cards and lists you need.</textarea>
+          <input type="submit" class="button" value="Save">
+        </form>
+        <div class="card-icons">
+          <i class="sub-icon sm-icon">
+          </i><i class="clock-icon sm-icon overdue">Nov 9
+          </i><i class="description-icon sm-icon">
+          </i><i class="comment-icon sm-icon">1
+          </i><i class="attachment-icon sm-icon">1
+          </i><i class="checklist-icon sm-icon">1/2
+          </i>
+        </div>
+        <div class="members">
+          <div class="member-container">
+            <div class="card-member">TP</div>
+          </div>
+          <div class="member-container">
+            <div class="card-member">DG</div>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <a class="label-icon sm-icon">Edit Labels</a>
+        <a class="person-icon sm-icon">Change Members</a>
+        <a class="forward-icon sm-icon">Move</a>
+        <a class="card-icon sm-icon">Copy</a>
+        <a class="clock-icon sm-icon">Change Due Date</a>
+        <a class="file-icon sm-icon">Archive</a>
+      </aside>
+    </div>
+    <div id="move-card" class="dropdown hidden">
+      <h2>Move Card
+        <i class="x-icon sm-icon"></i>
+      </h2>
+      <form>
+        <label class="dropdown-select-label">
+          <span>Board</span>
+          <select id="board-title" class="dropdown-select">
+              <option class="small-option" value="list-1"><span>My Title</span></option>
+              <option value="list-2">Tried it (another list)</option>
+              <option value="list-3">Third List</option>
+          </select>
+        </label><label class="dropdown-select-label">
+          <span>List</span>
+          <select id="position-title" class="dropdown-select">
+              <option class="small-option" value="list-1"><span>Stuff to try (this is a list) (selected)</span></option>
+              <option value="list-2">Tried it (another list)</option>
+              <option value="list-3">Third List</option>
+          </select>
+        </label><label class="dropdown-select-label">
+          <span>Position</span>
+          <select class="dropdown-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </label>
+        <input type="submit" class="button" value="Move">
+      </form>
+    </div>
+    <div id="copy-card" class="dropdown hidden">
+      <h2>Copy Card
+        <i class="x-icon sm-icon"></i>
+      </h2>
+      <form>
+        <label for="copy-card-title">Title</label>
+        <textarea class="dropdown-input" id="copy-card-title">Add all the cards and lists you need.</textarea>
+        <label>Keep...</label>
+        <fieldset class="checkboxes">
+          <label>
+            <input type="checkbox" checked="true">Checklists <span>(1)<span>
+          </label>
+          <label>
+            <input type="checkbox" checked="true">Labels <span>(1)<span>
+          </label>
+          <label>
+            <input type="checkbox" checked="true">Members <span>(2)<span>
+          </label>
+          <label>
+            <input type="checkbox" checked="true">Attachments <span>(1)<span>
+          </label>
+          <label>
+            <input type="checkbox" checked="true">Comments <span>(1)<span>
+          </label>
+        </fieldset>
+        <label>Copy to...</label>
+        <fieldset class="select-menus">  
+          <label class="dropdown-select-label">
+            <span>Board</span>
+            <select id="board-title" class="dropdown-select">
+                <option class="small-option" value="list-1"><span>My Title</span></option>
+                <option value="list-2">Tried it (another list)</option>
+                <option value="list-3">Third List</option>
+            </select>
+          </label><label class="dropdown-select-label">
+            <span>List</span>
+            <select id="position-title" class="dropdown-select">
+                <option class="small-option" value="list-1"><span>Stuff to try (this is a list) (selected)</span></option>
+                <option value="list-2">Tried it (another list)</option>
+                <option value="list-3">Third List</option>
+            </select>
+          </label><label class="dropdown-select-label">
+            <span>Position</span>
+            <select class="dropdown-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+        </fieldset>
+        <input type="submit" class="button" value="Create Card">
+      </form>
+    </div>
+    <div id="checklist-dropdown" class="dropdown hidden">
+      <h2>Add Checklist
+        <i class="x-icon sm-icon"></i>
+      </h2>
+      <form>
+        <label>Title</label>
+        <input type="text" class="dropdown-input" value="Checklist">
+        <label>Copy Items From...</label>
+        <select>
+          <option default>(none)</option>
+          <optgroup label="Add all the cards and lists you need.">
+            <option>Checklist</option>
+            <option>fasd</option>
+          </optgroup>
+        </select>
+        <input type="submit" class="button" value="Add">
+      </form>
+    </div>
+
+
+    <div class="screen hidden">
+      <div id="modal">
+        <i class="x-icon icon"></i>
+        <figure>
+          <img src="../public/images/mascots/chorizo.png">
+        </figure>
+        <div class="archived-banner hidden">
+          <i class="file-icon icon"></i>This card is archived.
+        </div>
+        <header>
+          <i class="card-icon icon"></i>
+          <input type="text" class="list-title" value="Add all the cards and lists you need.">
+          <p>in list <a class="link">Stuff to try (this is a list)</a><i class="sub-icon sm-icon"></i></p>
+        </header>
+        <section class="modal-main">
+          <ul class="modal-outer-list">
+            <li class="details-section">  
+              <ul class="modal-inner-list">
+                <li>
+                  <h3>Members</h3>
+                  <div class="member-container">
+                    <div class="card-member">TP</div>
+                  </div>
+                  <div class="member-container">
+                    <div class="card-member">DG</div>
+                  </div>
+                  <div class="member-container">
+                    <i class="plus-icon sm-icon"></i>
+                  </div>
+                </li><li>
+                  <h3>Labels</h3>
+                  <div class="member-container">
+                    <div class="green label"></div>
+                  </div>
+                  <div class="member-container">
+                    <i class="plus-icon sm-icon"></i>
+                  </div>
+                </li><li>
+                  <h3>Due Date</h3>
+                  <div class="overdue">
+                    <input type="checkbox" class="checkbox">Nov 9 at 12:00 PM<span> (past due)</span>
+                  </div>
+                </li>
+              </ul>
+              <form class="description">
+                <p>Description</p><span class="link">Edit</span>
+                <p class="textarea-overlay">My description</p>
+                <textarea class="textarea-toggle" rows="1" onInput="autoGrow(this)">My description</textarea>
+                <div>
+                  <div class="button" value="Save">Save</div><i class="x-icon icon"></i>
+                </div>
+                <p>You have unsaved edits on this field. <span class="link">View edits</span> - <span class="link">Discard</span>
+              </form>
+            </li>
+            <li class="attachment-section">
+              <h2 class="attachment-icon icon">Attachments</h2>
+              <ul class="attachment-list">
+                <li>
+                  <figure>
+                    <img src="../public/images/Mascots/pete.png">
+                  </figure>
+                  <div>
+                    <p>pete.png</p>
+                    <p>Added Nov 18 at 3:52 PM</p>
+                    <ul class="horiz-list">
+                      <li class="download-icon sm-icon">Download
+                      </li><li class="cover-icon sm-icon">Make Cover
+                      </li><li class="x-icon sm-icon">Delete
+                      </li><li class="comment-icon sm-icon">Comment
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <figure>
+                    <img src="../public/images/Mascots/chorizo.png">
+                  </figure>
+                  <div>
+                    <p>chorizo.png</p>
+                    <p>Added Nov 18 at 3:49 PM</p>
+                    <ul class="horiz-list">
+                      <li class="download-icon sm-icon">Download
+                      </li><li class="cover-icon sm-icon">Remove Cover
+                      </li><li class="x-icon sm-icon">Delete
+                      </li><li class="comment-icon sm-icon">Comment
+                      </li>
+                    </ul>
+                  </div>                  
+                </li>
+              </ul>
+              <ul class="light-list">
+                <li>Add an attachment...</li>
+              </ul>
+            </li>
+            <li class="checklist-section">
+              <h2 class="checklist-icon icon">fasd</h2>
+              <ul class="horiz-list">
+                <li>Hide completed items
+                </li><li>Delete...
+                </li>
+              </ul>
+              <div class="checklist-bar">
+                <span>50%</span><div></div>
+              </div>
+              <ul class="checklist">
+                <li class="textarea-focused">
+                  <input type="checkbox" class="checkbox">
+                  <form class="hidden">
+                    <textarea class="textarea-toggle" rows="1" onInput="autoGrow(this)">f</textarea>
+                    <div>
+                      <div class="button" value="Save">Save</div><i class="x-icon icon"></i>
+                      <div class="light-button">Delete</div>
+                      <div class="light-button">Convert to Card</div>
+                      <div class="light-button">
+                        <i class="more-icon icon"></i>
+                      </div>
+                    </div>
+                  </form>
+                  <s class="">f</s>
+                </li>
+                <li>
+                  <input type="checkbox" class="checkbox">
+                  <form class="hidden">
+                    <textarea onInput="autoGrow(this)" class="textarea-toggle" rows="1" onInput="autoGrow(this)">f</textarea>
+                    <div>
+                      <input type="submit" class="button" value="Save"><i class="x-icon icon"></i>
+                      <div class="light-button">Delete</div>
+                      <div class="light-button">Convert to Card</div>
+                      <div class="light-button">
+                        <i class="more-icon icon"></i>
+                      </div>
+                    </div>
+                  </form>
+                  <s class="">fd</s>
+                  </li>
+              </ul>
+              <form>
+                <textarea onInput="autoGrow(this)" placeholder="Add an item..." class="dropdown-input focus-only"></textarea>
+                <div>
+                  <input type="submit" class="button" value="Add"><i class="x-icon icon"></i>
+                  <div class="light-button">
+                    <i class="more-icon icon"></i>
+                  </div>
+                </div>
+              </form>
+            </li>
+                        <li class="checklist-section">
+              <h2 class="checklist-icon icon">Checklist</h2>
+              <ul class="horiz-list">
+                <li>Hide completed items
+                </li><li>Delete...
+                </li>
+              </ul>
+              <div class="checklist-bar">
+                <span>50%</span><div></div>
+              </div>
+              <ul class="checklist">
+                <li class="textarea-focused">
+                  <input type="checkbox" class="checkbox">
+                  <form class="hidden">
+                    <textarea class="textarea-toggle" rows="1" onInput="autoGrow(this)">f</textarea>
+                    <div>
+                      <div class="button" value="Save">Save</div><i class="x-icon icon"></i>
+                      <div class="light-button">Delete</div>
+                      <div class="light-button">Convert to Card</div>
+                      <div class="light-button">
+                        <i class="more-icon icon"></i>
+                      </div>
+                    </div>
+                  </form>
+                  <s class="">f</s>
+                </li>
+                <li>
+                  <input type="checkbox" class="checkbox">
+                  <form class="hidden">
+                    <textarea onInput="autoGrow(this)" class="textarea-toggle" rows="1" onInput="autoGrow(this)">f</textarea>
+                    <div>
+                      <input type="submit" class="button" value="Save"><i class="x-icon icon"></i>
+                      <div class="light-button">Delete</div>
+                      <div class="light-button">Convert to Card</div>
+                      <div class="light-button">
+                        <i class="more-icon icon"></i>
+                      </div>
+                    </div>
+                  </form>
+                  <s class="">fd</s>
+                  </li>
+              </ul>
+              <form>
+                <textarea onInput="autoGrow(this)" placeholder="Add an item..." class="dropdown-input focus-only"></textarea>
+                <div>
+                  <input type="submit" class="button" value="Add"><i class="x-icon icon"></i>
+                  <div class="light-button">
+                    <i class="more-icon icon"></i>
+                  </div>
+                </div>
+              </form>
+            </li>
+            <li class="comment-section">
+              <h2 class="comment-icon icon">Add Comment</h2>
+              <div>
+                <div class="member-container">
+                  <div class="card-member">TP</div>
+                </div>
+                <div class="comment">
+                  <label>
+                    <textarea required rows="1" placeholder="Write a comment..." onInput="autoGrow(this)"></textarea>
+                    <div>
+                      <a class="light-button card-icon sm-icon"></a>
+                      <a class="light-button smiley-icon sm-icon"></a>
+                      <a class="light-button email-icon sm-icon"></a>
+                      <a class="light-button attachment-icon sm-icon"></a>
+                    </div>
+                    <div>
+                      <input type="submit" class="button" value="Send">
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </li>
+            <li class="activity-section">
+              <h2 class="activity-icon icon">Activity</h2>
+              <ul class="horiz-list">
+                <li>Show Details</li>
+              </ul>
+              <ul class="modal-activity-list">
+                <li>
+                  <div class="member-container">
+                    <div class="card-member">TP</div>
+                  </div>
+                  <h3>TP1</h3>
+                  <div class="comment static-comment">
+                    <span>faadf;oif;osidjao;ifej</span>
+                  </div>
+                  <small>22 minutes ago - <span class="link">Edit</span> - <span class="link">Delete</span></small>
+                </li>
+                <li>
+                  <div class="member-container">
+                    <div class="card-member">TP</div>
+                  </div>
+                  <h3>TP1</h3>
+                  <div class="comment static-comment">
+                    <span>f<br>fast</span>
+                  </div>
+                  <small>22 minutes ago - <span class="link">Edit</span> - <span class="link">Delete</span></small>
+                </li>
+                <li>
+                  <div class="member-container">
+                    <div class="card-member">TP</div>
+                  </div>
+                  <h3>TP1</h3>
+                  <div class="comment">
+                    <label>
+                      <textarea required rows="1" onInput="autoGrow(this)">f</textarea>
+                      <div>
+                        <a class="light-button card-icon sm-icon"></a>
+                        <a class="light-button smiley-icon sm-icon"></a>
+                        <a class="light-button email-icon sm-icon"></a>
+                      </div>
+                      <div>
+                        <p>You haven't typed anything!</p>
+                        <input type="submit" class="button" value="Send"><i class="x-icon icon"></i>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section><!--
+     --><aside class="modal-buttons">
+          <h2>Add</h2>
+          <ul>
+            <li><i class="person-icon sm-icon"></i>Members</li>
+            <li><i class="label-icon sm-icon"></i>Labels</li>
+            <li><i class="checklist-icon sm-icon"></i>Checklist</li>
+            <li><i class="clock-icon sm-icon"></i>Due Date</li>
+            <li><i class="attachment-icon sm-icon"></i>Attachment</li>
+          </ul>
+          <h2>Actions</h2>
+          <ul>
+            <li><i class="forward-icon sm-icon"></i>Move</li>
+            <li><i class="card-icon sm-icon"></i>Copy</li>
+            <li><i class="sub-icon sm-icon"></i>Subscribe<i class="check-icon sm-icon"></i></li>
+            <hr>
+            <li><i class="file-icon sm-icon "></i>Archive</li><li class="hidden"><i class="send-icon sm-icon"></i>Send to board
+            </li><li class="red-button hidden"><i class="minus-icon sm-icon"></i>Delete
+            </li>
+          </ul>
+          <ul class="light-list">
+            <li>Share and more...</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    <div class="image-screen hidden">
+      <header>
+        <i class="x-icon icon"></i>
+      </header>
+      <img src="../public/images/Mascots/bad-robot.jpg">
+      <footer>  
+        <i class="forward-icon icon"></i>
+        <i class="back-icon icon"></i>
+        <div>
+          <h2>Bad-Robot.jpg</h2>
+          <p>Added Oct 27 at 12:15 AM - 29.98 KB</p>
+          <ul class="horiz-list">
+            <li class="download-icon sm-icon">Download</li>
+            <li class="cover-icon sm-icon">Make Cover</li>
+            <li class="x-icon sm-icon">Delete</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+  <script src="../public/javascripts/application.js"></script>
+  <script src="../public/javascripts/models/activity.js"></script>
+  <script src="../public/javascripts/models/attachment.js"></script>
+  <script src="../public/javascripts/models/board.js"></script>
+  <script src="../public/javascripts/models/card.js"></script>
+  <script src="../public/javascripts/models/checklist.js"></script>
+  <script src="../public/javascripts/models/checklist_item.js"></script>
+  <script src="../public/javascripts/models/list.js"></script>
+  <script src="../public/javascripts/models/member.js"></script>
+  <script src="../public/javascripts/collections/cards.js"></script>
+  <script src="../public/javascripts/collections/labels.js"></script>
+  <script src="../public/javascripts/collections/members.js"></script>
+  <script src="../public/javascripts/collections/lists.js"></script>
+  <script src="../public/javascripts/views/list.js"></script>
+  <script>
+    App.init();
+  </script>
+</html> 

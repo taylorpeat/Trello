@@ -1,0 +1,3234 @@
+@import "meyer_reset.css"
+@require "mixins"
+
+@font-face
+  font-family: MarketFF
+  src: url("fonts/ufonts.com_market-web.ttf")
+  
+@font-face
+  font-family: Trellicons
+  src: url("fonts/trellicons.woff")
+
+input
+  border: none
+  font: inherit
+  font-size: inherit
+  box-shadow: none
+  padding: 0
+
+html
+body
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  min-width: 550px
+body
+  font-family: "Helvetica Neue"
+  font-weight: normal
+  background-color: colors.bg
+  // background-image: url("https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=74553159742c7cf05c6eb04baabc408c")
+  // background-image: url("../images/backgrounds/large/hubble.jpg")
+  background-size: cover
+  // background-image: url("../images/backgrounds/patterns/random_grey_variations.png")
+  overflow: hidden
+
+nav
+  background-color: rgba(0, 0, 0, 0.15)
+  height: 40px
+  color: #f3f3f3
+  font-size: 14px
+  font-weight: bold
+  padding: 5px 8px 5px 5px
+  box-sizing: border-box
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .1)
+  z-index: 1
+  position: relative
+  .dropdown
+    top: 41px
+
+nav > ul > li
+nav > h1
+nav > ul
+header ul
+header li
+header div
+.search
+  display: inline-block
+  
+nav > ul > li
+.search
+  background: linear-gradient(to bottom, rgba(255,255,255,.3) 0, rgba(255,255,255,.2) 100%)
+  height: 30px
+  line-height: 30px
+  border-radius: 3px
+  padding: 0px 8px
+  box-sizing: border-box
+  vertical-align: top
+  cursor: pointer
+
+nav > ul > li
+  &:hover
+    background: linear-gradient(to bottom, rgba(255,255,255,.4) 0, rgba(255,255,255,.3) 100%)
+    color: #fff
+  + li
+    margin-left: 8px
+
+.dropdown-input
+  dropdown-input()
+
+#boards-dropdown
+  position: absolute
+  top: 45px
+  left: 0
+  width: 280px
+  z-index: 2
+  border-radius: 0 3px 3px 0
+  background-color: #fff
+  font-weight: normal
+  color: #8C8C8C
+  padding: 6px 8px 3px 6px
+  box-sizing: border-box
+  box-shadow: 0 3px 6px rgba(0,0,0,.4)
+  .dropdown-input
+    margin-bottom: 10px
+  dt
+    padding-left: 11px
+    line-height: 30px
+    height: 30px
+    padding-bottom: 4px
+  dd
+    height: 36px
+    line-height: 36px
+    margin-bottom: 4px
+    border-radius: 3px
+    position: relative
+    color: #4d4d4d
+    font-weight: bold
+    overflow: hidden
+    cursor: pointer
+    &:before
+      background-color: rgba(255, 255, 255, 0.6)
+      border-radius: 3px 0 0 3px
+      content: ""
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+    &:after
+      background-color: rgba(255, 255, 255, 0.25)
+      border-radius: 3px 0 0 3px
+      content: ""
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 1
+    &:hover
+      .icon
+        &:before
+          margin-left: 0
+          transition: margin-left 0.1s
+        &:hover:before
+          font-size: 15px
+          transition: font-size 0.15s
+          opacity: 0.7
+      &:after
+        background: none
+    .icon
+      float: right
+      position: relative
+      top: 1px
+      width: 23px
+      box-sizing: border-box
+      &.starred:before
+        color: #F2D600
+        margin-left: 0
+      &.starred:hover:before
+          color: #838C91
+      &:before
+        font-size: 14px
+        color: #000
+        opacity: 0.3
+        margin-left: 25px
+        transition: margin-left .1s
+    .x-icon:before
+      color: #999
+      margin-left: 50px
+      transition: margin-left .1s
+    div:last-of-type
+      position: absolute
+      top: 0
+      left: 36px
+      bottom: 0
+      right: 0
+      padding-left: 10px
+      border-radius: 0 3px 3px 0
+      z-index: 2
+    div:first-of-type
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      width: 36px
+      border-radius: 3px 0 0 3px
+      z-index: 1
+  .dash-icon
+  .plus-icon
+    float: right
+    height: 30px
+    width: 30px
+    line-height: 30px
+    text-align: center
+    border-radius: 3px
+    cursor: pointer
+    &:before
+      font-size: 12px
+    &:hover
+      background-color: #D6DADC
+      color: #4D4D4D
+  .plus-icon
+    display: none
+  .collapsed
+    + div
+      display: none
+    .plus-icon
+      display: block
+    .dash-icon
+      display: none
+  .sm-icon:before
+    padding-right: 5px
+  ul
+    padding-top: 6px
+    text-decoration: underline
+  li
+    line-height: 34px
+    padding-left: 12px
+    border-radius: 3px
+    margin-bottom: 6px
+    font-weight: normal
+    &:hover
+      background-color: #D6DADC
+      color: #4d4d4d
+      text-decoration: underline
+
+
+#search-dropdown
+  left: 103px
+  width: 600px
+  line-height: 30px
+  background-color: #EDEFF0
+  color: #4d4d4d
+  padding: 3px 10px 12px 10px
+  h1
+    font-size: 16px
+    font-weight: bold
+    padding-bottom: 5px
+  div
+    border-bottom: 1px solid #d6dadc
+    padding-bottom: 8px
+    p
+      padding-left: 8px
+      border-radius: 3px
+      text-align: left
+      width: 100%
+      text-decoration: none
+      color: #4d4d4d
+      span
+        color: #8c8c8c
+  > div + p
+    text-align: center
+    color: #8c8c8c
+    padding: 20px 30px 11px 30px
+    line-height: 18px
+    span:hover
+      color: #4d4d4d
+  > p
+    span
+      text-decoration: underline
+    &:last-child span
+      color: #444
+      &:hover
+        color: #111
+  p + h1
+    padding-bottom: 0
+
+
+.dropdown
+  position: absolute
+  right: 5px
+  width: 302px
+  padding: 0 0 10px 0
+  background-color: #fff
+  border-radius: 3px
+  border: 1px solid #D6DADC
+  border-bottom-color: #C4C9CC;
+  box-shadow: 0 1px 6px rgba(0,0,0,.15)
+  font-size: 14px
+  font-weight: normal
+  color: #444
+  box-sizing: border-box
+  z-index: 3
+  ul
+    padding-top: 7px
+    text-align: left
+  hr
+    padding-top: 8px
+    margin: 0 10px 8px 10px    
+  li
+    padding: 0 10px 0 10px
+    font-weight: bold
+    line-height: 30px
+    cursor: pointer
+    &:hover
+      background-color: #298FCA
+      color: #fff
+      p
+        color: #fff
+      .sm-icon:before
+        color: #fff
+    p
+      line-height: 15px
+      margin-top: -2px
+      color: #8c8c8c
+      font-weight: 400
+      font-size: 12px
+      padding-bottom: 6px
+  h2
+    dropdown-header()
+    i
+      dropdown-header-i()
+  .back-icon
+    left: 3px
+    right: auto
+  form
+    padding: 17px 10px 0 10px
+  .button
+    padding: 11px 20px
+  .inactive
+    color: #8c8c8c
+    cursor: default
+    &:hover
+      background: none
+      color: #8c8c8c
+  label
+    font-weight: bold
+    color: #4D4D4D
+    padding-bottom: 6px
+    display: block
+
+.shifted
+  main,
+  header,
+  .menu-sidebar
+    margin-right: 233px
+    transition: margin-right .2s
+  main
+    margin-right: 340px
+  .menu-sidebar
+    left: auto
+    margin-right: 346px 
+   
+
+.menu-sidebar
+  width: 340px
+  position: absolute
+  top: 40px
+  bottom: 0px
+  right: -346px
+  background-color: #EDEFF0
+  border: 1px solid colors.dropdown-bg
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4)
+  z-index: 1
+  transition: margin 0.2s
+  box-sizing: border-box
+  overflow: hidden
+  .main > .back-icon
+    margin: 0
+  .main.slide > .back-icon
+    margin-left: -35px
+  > div > .back-icon
+    left: 19px
+    right: auto
+    transition: margin-left 0.2s
+    margin-left: -35px
+  > div > i
+    dropdown-header-i()
+    color: #8c8c8c
+    padding-right: 3px
+    top: 7px
+    right: 9px
+  .menu-contents > .members
+    float: none
+    padding: 5px 0 16px 0
+    color: #4d4d4d
+  .activity-list
+    padding-top: 10px
+  h1
+    dropdown-header() 
+    font-weight: bold
+    color: #4d4d4d
+    line-height: 40px
+    margin: 0 6px 0 12px
+    padding: 2px 0;
+  .menu-list:first-child
+    padding-top: 12px
+
+
+.menu-contents
+  position: absolute
+  top: 50px
+  bottom: 0
+  left: 0
+  right: 0
+  margin-left: 340px
+  margin-right: -340px
+  overflow: auto
+  padding: 0 6px 11px 12px
+  font-size: 14px
+  transition: margin 0.2s
+  h3
+    padding: 15px 0 4px 0
+    font-size: 18px
+    font-weight: bold
+    color: #4d4d4d
+  hr
+    padding-top: 12px
+    margin: 0 0 12px 0
+  
+.menu-members
+  padding: 7px 0 18px 0
+  color: #4d4d4d
+  vertical-align: top
+
+.add-members
+.send-back
+  white-button()
+
+hr
+  border: none
+  border-bottom: 1px solid #D6DADC
+  line-height: normal
+
+.menu-list
+  font-weight: bold
+  color: #4d4d4d
+  > li
+    position: relative
+    line-height: 32px
+    padding-left: 8px
+    border-radius: 3px
+    cursor: pointer
+    &:hover
+      color: #111
+      background-color: #D6DADC
+    > i.check-icon
+      padding-left: 7px
+      top: -1px
+      position: relative 
+
+.board-link
+  padding: 1px 0 0 38px
+  input
+    dropdown-input()
+    border: 1px solid #EDEFF0
+    background-color: #F8F9F9
+    padding-left: 8px
+    &:focus
+      box-shadow: 0 0 2px #298FCA
+  p
+    padding-top: 12px
+    line-height: 18px
+    color: #8c8c8c
+    &:before
+      padding-right: 4px
+  span
+    font-weight: bold
+    color: #4d4d4d
+    padding-bottom: 6px
+    display: block
+
+.main .menu-contents
+    margin-left: -340px
+    margin-right: 340px
+    transition: margin 0.2s
+
+.slide
+  &:not(.main) .back-icon
+    margin: 0
+    transition: margin 0.2s
+  .menu-contents
+    margin: 0
+    transition: margin 0.2s
+
+.admin
+  position: relative
+  overflow: hidden
+  &:after
+    position: absolute
+    right: 0px
+    bottom: 0px
+    width: 9px
+    height: 9px
+    line-height: 1
+    background-image: url("../images/admin-badge.png")
+    background-size: 9px 9px
+    z-index: 4
+    content: ""
+
+.member-icon
+  font-weight: bold
+  color: #4d4d4d
+
+.member-name
+  font-weight: bold
+  text-decoration: none
+
+.activity-list
+  li
+    position: relative
+    padding-bottom: 10px
+    vertical-align: top
+    &:last-child p
+      border: none
+  i
+    position: absolute
+    top: 2px
+    left: 12px
+    &:before
+      width: 18px
+      height: 18px
+      line-height: 18px
+      background-color: #D6DADC
+      content: "TP"
+      font-size: 11px
+      display: block
+      text-align: center
+      border-radius: 3px
+      margin-right: 8px
+  p
+    margin-left: 38px
+    font-weight: normal
+    line-height: 18px
+    padding: 0 8px 10px 0
+    border-bottom: 1px solid #E2E4E6
+  span
+    text-decoration: underline
+  small
+    color: #8c8c8c
+    font-size: 12px
+    padding-left: 2px
+
+
+.background-item:before
+  width: 20px
+  height: 20px
+  border-radius: 3px
+  background-color: colors.bg
+  margin: 0 11px 0 1px
+  display: inline-block
+  content: ""
+  vertical-align: middle
+  position: relative
+  top: -1px
+
+.all-activity
+  height: 50px
+  line-height: 50px
+  padding: 0 0 0 38px
+  display: block
+  border-radius: 3px
+  color: #8c8c8c
+  text-decoration: underline
+  cursor: pointer
+  &:hover
+    background-color: #D6DADC
+    color: #111
+
+.bg-options
+  top: 72px
+  .title
+    line-height: 18px
+    padding-bottom: 6px
+    color: #8c8c8c
+    cursor: default
+  .title:hover
+    color: #8c8c8c
+    background: none
+  .all-activity
+    line-height: 32px
+    height: 32px
+    margin: 0 8px 0 8px
+    padding-left: 12px
+  li:hover i:before
+    color: #fff
+  .check-icon
+    padding-left: 7px
+
+#info-dropdown
+  figcaption
+  p
+  li
+    padding: 8px 0
+    text-align: center
+    border-radius: 3px
+    &:hover
+      background-color: #EDEFF0
+      color: #111
+  p
+  li
+    text-decoration: underline
+    color: #8c8c8c
+  figure
+    padding: 7px 10px 0 10px
+  img
+    width: 100%
+    border-radius: 3px
+    display: block
+  figcaption
+    font-weight: bold
+    font-size: 16px
+    line-height: 20px
+    margin-bottom: 2px
+  p
+    margin: 0 10px
+  ul
+    padding: 0 0 1px 0
+    text-align: center
+  li
+    display: inline-block
+    padding: 0 8px
+    border-radius: 3px
+    font-weight: normal
+    color: #8c8c8c
+    + li
+      margin-left: 2px
+
+#notifications-dropdown
+  width: 452px
+  border: 1px solid colors.dropdown-bg
+  background-color: #EDEFF0
+  z-index: 2
+  div
+    padding: 17px 10px 1px 10px
+    i
+      float: left
+      &:before
+        font-size: 20px
+        color: #999
+        padding: 0 13px 0 5px
+        position: relative
+        top: 3px
+  p
+    line-height: 18px
+
+.link
+  text-decoration: underline
+  cursor: pointer
+  &:hover
+    color: #111
+
+small
+  font-size: 12px
+  color: #8c8c8c
+  padding-left: 2px
+
+.search-container
+  width: 180px
+  transition: width 0.2s
+  position: relative
+  background: none
+  &:hover
+    background: none
+  &.active
+    width: 280px
+    transition: width .2s
+    background: none
+
+.active
+  .search
+    visibility: hidden
+  .active-search
+    visibility: visible
+
+.search
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: none
+  background-color: rgba(255,255,255, 0.3)
+  &:hover
+    background-color: rgba(255, 255, 255, 0.4)
+
+.active-search
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: #fff
+  padding: 0 7px 0 0
+  visibility: hidden
+  border-radius: 3px
+  &:hover
+    background-color: #fff
+  div
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 50px
+  input
+    padding-left: 8px
+    width: 100%
+    border-radius: 3px 0 0 3px
+    border: none
+    font: 13px "Helvetica Neue"
+    color: #4D4D4D
+    box-sizing: border-box
+    &:focus
+      outline: none
+  .goto-icon
+  .x-icon
+    float: right
+    color: rgba(0,0,0,.4)
+    &:hover
+      color: #4D4D4D
+  .x-icon
+    padding-left: 8px
+
+.user-info
+  float: right
+  li
+    width: 30px
+    padding: 0
+    text-align: center
+  .split-button-1
+    background: none
+    background-color: #d6dadc
+    border-radius: 3px 0 0 3px
+    color: #4d4d4d
+    text-align: center
+    font-size: 12px
+    width: 30px
+    box-sizing: border-box
+    &:hover
+      background-color: #ABB0B2
+      color: #4d4d4d
+      + .split-button-2
+        background: linear-gradient(to bottom, rgba(255,255,255,.4) 0, rgba(255,255,255,.3) 100%) 
+  .split-button-2
+    margin-left: 0
+    border-radius: 0 3px 3px 0
+    text-align: center
+    width: auto
+    padding: 0 8px
+
+.boards
+  span
+    pointer-events: none
+  &:before
+    padding-right: 10px
+    vertical-align: top
+
+.icon
+  &:before
+  &:after
+    font: 16px Trellicons
+    line-height: 30px
+    cursor: pointer
+
+.menu-icon
+  &:before
+    font: 16px Trellicons
+    text-align: center
+    color: #8c8c8c
+    padding: 0 14px 0 3px
+    position: relative
+    top: 2px
+  &:hover:before
+    color: #111
+
+nav > h1
+  font-family: MarketFF
+  color: #fff
+  opacity: 0.5
+  font-size: 27px
+  position: absolute
+  left: 50%
+  top: 9px
+  margin-left: -37px
+  transition: opacity 0.1s
+  &:hover
+    opacity: 0.8
+    transition: opacity 0.1s
+    cursor: pointer
+  &:before
+    font: 18px Trellicons
+    content: "\e908"
+    padding-right: 2px
+
+header
+  padding: 8px 8px 8px 10px
+  font-weight: normal
+  box-sizing: border-box
+  position: relative
+  transition: margin-right .2s
+  z-index: 1
+  > ul li + li
+    margin: 0 1px 0 4px
+  .button
+    padding: 11px 30px
+  .star-icon
+    min-width: 30px
+    text-align: center
+    &:before
+      top: -2px
+    &.selected
+      background-color: rgba(0, 0, 0, 0.1)
+      &:hover
+        background-color: rgba(0, 0, 0, 0.3)
+      &:before
+        color: #F2D600
+  > ul
+    .private:before
+      padding-right: 9px
+      top: -1px
+    .star-icon:before
+    .private:before
+      font-size: 12px
+      vertical-align: middle
+      position: relative
+  .menu
+  .subscribed
+  .filter-header
+  > ul > li
+    color: #f3f3f3
+    border-radius: 3px
+    height: 30px
+    line-height: 30px
+    vertical-align: middle
+    box-sizing: border-box
+    cursor: pointer
+  .menu
+  .subscribed
+  > ul > li
+    padding: 0 8px 0 8px
+    &:hover
+      background-color: rgba(0,0,0,.12)
+
+.dark-font
+  header
+    .menu
+    .subscribed
+    .filter-header
+    > ul > li
+      color: rgba(0,0,0,.7)
+      i:before
+        color: rgba(0,0,0,.7)
+  nav
+    background-color: rgba(0, 0, 0, 0.4)
+
+.menu
+.subscribed
+.filter-header
+  float: right
+  line-height: 26px
+  padding-left: 0
+  text-decoration: underline
+
+.private
+.menu
+.subscribed
+.filter-header
+  font-size: 12px
+
+.menu
+.subscribed
+.filter-header
+  line-height: 30px
+  i:before
+    text-decoration: none
+    color: #f3f3f3
+    display: inline-block
+    width: 30px
+    text-align: center
+    font-weight: normal
+
+.menu
+.subscribed
+.filter-header
+  margin-left: 4px
+  
+.filter-header
+  background-color: #5AAC44
+  padding-right: 0
+  span
+    padding-right: 8px
+    + i
+      background-color: #61BD4F
+      height: 100%
+      display: inline-block
+      border-radius: 0 3px 3px 0
+  &:hover
+    background-color: #61BD4F
+    span + i
+      background-color: #7BC86C
+      &:hover
+        background-color: #99D18F
+
+#title
+  font-size: 18px
+  font-weight: bold
+  position: relative
+
+#rename-board-dropdown
+  top: 44px
+  left: 8px
+  right: auto
+  padding: 3px 10px 10px 10px
+  h2
+    margin: 0
+  &:hover
+    background-color: #fff
+  label
+    font-weight: bold
+    padding: 9px 0 6px 0
+    display: block
+    background-color: none
+  input
+    margin-bottom: 20px
+    padding-left: 7px
+
+#unsubscribe-dropdown
+  text-align: center
+  top: 44px
+  
+#unsubscribe-dropdown
+#delete-card-dropdown
+#close-board-dropdown
+#reset-board-dropdown
+#archive-all
+  > div
+    width: 100%
+    padding: 0 10px
+    box-sizing: border-box
+  p
+    text-align: left
+    line-height: 18px
+    color: #4d4d4d
+    padding: 7px 0 16px 0
+  .button
+    background: linear-gradient(to bottom, #D6DADC, #CDD2D4)
+    color: #B04632
+    box-shadow: 0 1px 0 #959DA1
+    width: 100%
+    box-sizing: border-box
+    padding: 9px 0
+    &:hover
+      background: linear-gradient(to bottom,#CF513D,#B04632)
+      color: #fff
+      box-shadow: 0 1px 0 #4d4d4d
+
+#private-dropdown
+  top: 44px
+  left: 132px
+  right: auto
+
+.privacy-list
+  li
+    i:before
+      padding: 0 3px 0 3px
+      top: 0
+    &:hover i:before
+      color: #fff
+    .check-icon:before
+      padding-left: 2px
+  p
+    margin-top: -2px
+  .private-icon:before
+    color: #EB5A46
+  .globe-icon:before
+    color: #61BD4F
+
+#dropdown-container .privacy-list li .check-icon:before
+  padding-left: 7px
+
+main
+  position: absolute
+  top: 0
+  bottom: 10px
+  left: 0
+  right: 0
+  padding: 86px 10px 0 10px
+  overflow: auto
+  box-sizing: border-box
+  transition: margin-right 0.2s
+
+.list-container
+  white-space: nowrap
+  height: 100%
+  
+.list-wrapper
+  display: inline-block
+  height: 100%
+  + .list-wrapper
+    margin-left: 10px
+
+.list-background
+  background-color: rgba(0,0,0,0.2)
+  border-radius: 3px
+
+.list
+  white-space: normal
+  box-sizing: border-box
+  width: 270px
+  border-radius: 3px
+  padding-top: 4px
+  background-color: #E2E4E6
+  color: #4d4d4d
+  font-size: 14px
+  position: relative
+  display: inline-block
+  vertical-align: top
+  cursor: pointer
+  > div:first-of-type
+    padding: 0 12px 0 5px
+    overflow: hidden
+  > a
+  > i
+    display: block
+    float: right
+    padding: 0 4px 0px 4px
+    height: 26px
+    width: 18px
+    line-height: 26px
+    font-size: 15px
+    text-decoration: none
+    text-align: center
+    border-radius: 3px
+    font-family: Trellicons
+    &:before
+      position: relative
+      color: #999
+      top: -1px
+  > a  
+    margin-right: 4px
+  > a:hover
+      background-color: #CDD2D4
+      color: #4d4d4d 
+  > div:last-child
+    padding-left: 10px
+    font-size: 14px
+    border-radius: 0 0 4px 4px
+    height: 34px
+    line-height: 34px
+    box-sizing: border-box
+    vertical-align: top
+    cursor: inherit
+    color: #8c8c8c
+    &:hover
+      background-color: #CDD2D4
+      text-decoration: underline
+      color: #4d4d4d
+  .card-member
+  > a
+   cursor: inherit
+
+.list-title
+  font: inherit
+  color: inherit
+  font-weight: bold
+  display: block
+  margin-bottom: 5px
+  background-color: transparent
+  border: none
+  height: 25px
+  width: 100%
+  padding-left: 5px
+  cursor: inherit
+  transition: background-color 0.3s
+  box-sizing: border-box
+  &:focus
+    background-color: #fff
+    outline: none
+    border-radius: 3px
+    cursor: text
+
+.existing-lists
+  display: inline-block
+  vertical-align: top
+  height: 100%
+  
+.existing-lists:empty + .new-list
+  margin-left: 0
+
+.new-list
+  display: inline-block
+  margin: 0 10px
+  font-size: 14px
+  width: 270px
+  border-radius: 4px
+  padding: 4px 4px 2px 4px
+  background-color: rgba(0, 0, 0, .12)
+  overflow: hidden
+  box-sizing: border-box
+  &:first-child
+    margin: 0
+  div
+    overflow: hidden
+    max-height: 0
+    transition: max-height 0.15s
+  span
+    color: rgba(255, 255, 255, .7)
+    top: 0
+    line-height: 32px
+    height: 34px
+    padding-left: 7px
+    width: 100%
+    display: block
+  [type="text"]
+    display: none
+    font: inherit
+    box-shadow: inset 0 1px 8px rgba(0,0,0,.15)
+    border: none
+    border: 1px solid #aaa
+    background-color: rgba(0, 0, 0, 0.05)
+    border-radius: 3px
+    width: 100%
+    height: 34px
+    font-size: inherit
+    color: #4d4d4d
+    box-sizing: border-box
+    padding-left: 7px
+    &:focus
+      outline: none
+  [type="submit"]
+    padding: 8px 20px
+    display: inline-block
+  i
+    padding-left: 5px
+    vertical-align: top
+    line-height: 30px
+    display: inline-block
+    &:before
+      line-height: 30px
+      font-size: 20px
+      color: #999
+    &:hover:before
+      color: #111
+  &:hover 
+    background-color: rgba(0, 0, 0, 0.3)
+    cursor: pointer
+  &:not(.selected)
+    transition: all 0.2s
+  &.selected
+    background-color: #D6DADC
+    [type='text']
+      display: block
+    span
+      display: none
+    div
+      max-height: 50px
+      padding: 4px 0 0 0;
+
+.card-background.dragging .card,
+.list-wrapper.dragging .list
+    transform: rotate(5deg)
+    position: relative
+    z-index: 2
+    background-color: #EDEFF0
+.card-background.dragging .card .edit-toggle
+  display: block
+  
+.card-background
+  background-color: #C4C9CC
+  margin: 0 8px 7px 8px
+  border-radius: 3px
+
+.card
+  background-color: #fff
+  border-radius: 3px
+  box-shadow: 0 1px #ccc
+  position: relative
+  padding-bottom: 4px
+  cursor: inherit
+  color: #4d4d4d
+  &:not(.arch-card):hover
+    background-color: #EDEFF0
+    .edit-toggle
+      display: block
+  img
+    max-width: 100%
+    display: block
+    border-radius: 4px 4px 0 0
+  p
+    padding: 5px 0 4px 0
+    line-height: 18px
+  &:after
+    clear: both
+    content: ""
+    display: block
+  .card-icons
+    color: #999
+
+.card-info
+  padding: 1px 6px 0px 8px
+
+.card-icons
+  float: left
+  padding: 0 7px 0 9px
+  i
+    display: inline-block
+    box-sizing: border-box
+    font-size: 12px
+    // color: #8c8c8c
+    padding: 0 7px
+    border-radius: 3px
+    height: 20px
+    line-height: 20px
+    margin-bottom: 6px
+    &:first-child
+      padding-left: 4px
+  .comment-icon:before
+  .attachment-icon:before
+  .checklist-icon:before
+  .clock-icon:before
+    padding-right: 4px
+  .clock-icon
+    padding: 0 4px 0 5px
+    margin: 0 2px 0 3px
+
+.sm-icon:before
+  font: 9pt Trellicons
+  color: #999
+  position: relative
+  top: 1px
+.sm-icon.check-icon:before
+  top: 0
+
+.edit-toggle
+  display: none
+  position: absolute
+  top: 3px
+  right: 3px
+  height: 26px
+  width: 26px
+  line-height: 26px
+  border-radius: 3px
+  box-sizing: border-box
+  text-align: center
+  z-index: 2
+  background-color: rgba(240,234,243, 0.75)
+  &:hover
+    background-color: #D8D8D8
+    &:before
+      color: #4D4D4D
+
+.members
+  float: right
+  margin-right: 6px
+  &:after
+    clear: both
+    content: ""
+    display: block
+
+.member-container
+  float: left
+  padding: 2px 0 2px 0
+  + .member-container
+    margin-left: 4px
+
+.card-member
+  height: 30px
+  width: 30px
+  line-height: 30px
+  background-color: #D6DADC
+  border-radius: 3px
+  font-size: 9pt
+  font-weight: bold
+  text-align: center
+  cursor: pointer
+  vertical-align: top
+  &.small-size
+    margin: -1px 0 0 12px
+    width: 18px
+    height: 18px
+    line-height: 18px
+    font-size: 11px
+  &:hover
+    background-color: #CDD2D4
+
+.grey
+.grey:before
+  background-color: #B6BBBF
+
+.green
+.green:before
+  background-color: #61BD4F
+
+.yellow
+.yellow:before
+  background-color: #F2D600
+
+.orange
+.orange:before
+  background-color: #FFAB4A
+
+.red
+.red:before
+  background-color: #EB5A46
+
+.purple
+.purple:before
+  background-color: #C377E0
+                
+.blue
+.blue:before
+  background-color: #0079BF
+
+.colorblind 
+  .green.colorblindable,
+  .green:before
+    background: repeating-linear-gradient(45deg, rgba(0,0,0,0), rgba(0,0,0,0) 6px, rgba(255,255,255,0.5) 6px, rgba(255,255,255,0.5) 12px),
+                linear-gradient(0deg, #61BD4F, #61BD4F)
+  .yellow.colorblindable,
+  .yellow:before
+    background: linear-gradient(135deg,rgba(255,255,255,.5) 25%,transparent 25%),
+                linear-gradient(225deg,rgba(255,255,255,.5) 25%,transparent 25%),
+                linear-gradient(315deg,rgba(255,255,255,.5) 25%,transparent 25%),
+                linear-gradient(45deg,rgba(255,255,255,.5) 25%,transparent 25%),
+                linear-gradient(0deg, #F2D600, #F2D600)
+    background-size: 9pt 9pt
+  .orange.colorblindable,
+  .orange:before
+    background: linear-gradient(to right,rgba(255,255,255,.5) 50%,transparent 50%,transparent),
+                linear-gradient(0deg, #FFAB4A, #FFAB4A)
+    background-size: 8px 8px
+  .red.colorblindable,
+  .red:before
+    background: linear-gradient(135deg,rgba(255,255,255,.5) 25%,transparent 25%),
+                linear-gradient(225deg,rgba(255,255,255,.5) 25%,transparent 25%),
+                linear-gradient(315deg,rgba(255,255,255,.5) 25%,transparent 25%),
+                linear-gradient(45deg,rgba(255,255,255,.5) 25%,transparent 25%),
+                linear-gradient(0deg, #EB5A46, #EB5A46)
+    background-size: 9pt 9pt
+  .purple.colorblindable,
+  .purple:before
+    background: repeating-linear-gradient(135deg, rgba(0,0,0,0), rgba(0,0,0,0) 6px, rgba(255,255,255,0.5) 6px, rgba(255,255,255,0.5) 12px),
+                linear-gradient(0deg, #C377E0, #C377E0)
+
+
+.card-label
+  padding-top: 7px
+  background-color: transparent
+  display: inline-block
+  &:before
+    width: 42px
+    height: 8px
+    border-radius: 3px
+    display: block
+    content: ""
+  + .card-label
+    padding-left: 3px
+.colorblind .card .card-label
+  background: none
+    
+.overdue
+  background-color: #EC9488
+  &:hover  
+    background-color: #EF7564
+.overdue-recent
+  background-color: #CF513D
+  &:hover
+    background-color: #B04632
+.due-soon
+  background-color: #E6C60D
+  &:hover
+    background-color: #D9B51C
+.due-later
+  color: #8c8c8c
+  background-color: #E2E4E6
+  &:hover
+    color: #4d4d4d
+    background-color: #D6DADC
+.completed
+  background-color: #5AAC44
+  &:hover
+    color: #F3F3F3
+    background-color: #519839
+    
+.overdue,
+.overdue-recent,
+.due-soon,
+.completed
+  color: #F3F3F3
+  &:before
+    color: #F3F3F3
+
+.hidden
+  display: none !important
+
+.active-card
+  .card
+    margin-bottom: 8px
+    &:hover
+      background-color: #fff    
+  .card-info
+    min-height: 2px
+
+.add-dropdown
+  padding: 0 8px 7px 8px
+  position: relative
+  .button
+    padding: 8px 16px
+  textarea
+    width: 100%
+    height: 58px
+    padding: 3px 6px 0 8px
+    box-sizing: border-box
+    border: none
+    resize: none
+    font: inherit
+    color: inherit
+    line-height: 18px
+  .x-icon
+    x-icon-close()
+    
+.add-top,
+.add-bottom
+  display: none
+  
+.add-dropdown-active
+  .active-card
+    display: block
+  .add-card-toggle
+    display: none
+
+.button
+  border-radius: 3px
+  background: linear-gradient(to bottom, #61BD4F, #5AAC44)
+  display: inline-block
+  text-align: center
+  color: #fff
+  font-weight: bold
+  box-shadow: 0 1px #3F6F21
+  cursor: pointer
+  &:hover
+    background: linear-gradient(to bottom,#5AAC44, #519839)
+
+#activity
+  .button
+    font-size: 14px
+    font-weight: normal
+    width: 49%
+    height: 33px
+    line-height: 33px
+    float: left
+    background: none
+    color: #4d4d4d
+    text-decoration: underline
+    cursor: pointer
+    box-shadow: none
+    &:hover
+      background-color: #298FCA
+      color: #fff
+    + .button
+      float: right
+  .button-active
+    background-color: #0079BF
+    color: #fff
+    text-decoration: none
+    cursor: default
+    &:hover
+      background-color: #0079BF
+
+.button-container
+  padding: 7px 0 13px 0
+  border-bottom: 1px solid #D6DADC
+  margin-bottom: 6px
+  &:after
+    clear: both
+    display: block
+    content: " "
+
+textarea:focus
+  outline: none
+
+.add-options
+  position: absolute
+  bottom: 8px
+  right: 8px
+  height: 30px
+  width: 30px
+  padding: 0 4px 10px 4px
+  line-height: 30px
+  font-size: 20px
+  text-align: center
+  box-sizing: border-box
+  border-radius: 3px
+  letter-spacing: 1.5px
+  font-family: Trellicons
+  color: #8c8c8c
+  font-weight: bold
+  cursor: pointer
+  &:hover
+    color: #4d4d4d
+    background-color: #CDD2D4
+  span
+    position: relative
+    top: -7px
+
+#add-options-dropdown
+  top: 444px
+  left: 242px
+
+#menu-backgrounds .menu-contents
+  padding-right: 5px
+  padding-bottom: 48px
+
+.bg-samples
+  padding-top: 1px
+  &:after
+    clear: both
+    content: ""
+    display: block
+  &:first-child span:hover
+    opacity: 0.8
+  > li
+    float: left
+    padding: 6px
+    width: 33%
+    height: 72px
+    box-sizing: border-box
+    position: relative
+    &:after
+      clear: both
+      content: ""
+      display: block
+  span
+    height: 100%
+    display: block
+    border-radius: 3px
+    cursor: pointer
+    background-size: cover
+    position: relative
+
+.bg-cover
+  position: absolute
+  display: none
+  bottom: 0
+  width: 100%
+  height: 25px
+  background-color: rgba(0, 0, 0, 0.5)
+  color: rgba(255, 255, 255, 0.7)
+  text-align: center
+  box-sizing: border-box
+  border-radius: 0 0 3px 3px
+  line-height: 22px
+  font-size: 12px
+  &:hover
+    color: rgba(255, 255, 255, 0.9)
+  &:before
+    content: "\e93f"
+    font-family: Trellicons
+    display: inline-block
+    text-decoration: none
+    padding-right: 4px
+    position: relative
+    top: 2px
+    font-size: 14px
+    
+span
+  &:hover .bg-cover
+    display: block
+  &.dark-cyan
+    background-color: #0079BF
+  &.orange
+    background-color: #D29034
+  &.olive
+    background-color: #519839
+  &.red
+    background-color: #B04632
+  &.pink
+    background-color: #89609E
+  &.violet
+    background-color: #CD5A91
+  &.green
+    background-color: #4BBF6B
+  &.turquoise
+    background-color: #00AECC
+  &.gray
+    background-color: #838C91
+  &.bg-baells
+    background-image: url("../images/backgrounds/thumbs/baells.jpg")
+  &.bg-hubble
+    background-image: url("../images/backgrounds/thumbs/hubble.jpg") 
+  &.bg-rain
+    background-image: url("../images/backgrounds/thumbs/rain.jpg") 
+  &.bg-dew
+    background-image: url("../images/backgrounds/thumbs/dew.jpg") 
+  &.bg-snowflakes
+    background-image: url("../images/backgrounds/thumbs/snowflakes.jpg") 
+  &.bg-new-york
+    background-image: url("../images/backgrounds/thumbs/new-york.jpg") 
+  &.bg-glen-canyon
+    background-image: url("../images/backgrounds/thumbs/glen-canyon.jpg") 
+  &.bg-maldives
+    background-image: url("../images/backgrounds/thumbs/maldives.jpg") 
+  &.bg-pond
+    background-image: url("../images/backgrounds/thumbs/pond.jpg") 
+  &.bg-purty-wood
+    background-image: url("../images/backgrounds/patterns/purty_wood_dark.png")
+  &.bg-irongrip
+    background-image: url("../images/backgrounds/patterns/irongrip.png")
+  &.bg-wild-oliva
+    background-image: url("../images/backgrounds/patterns/wild_oliva.png")
+  &.bg-hex
+    background-image: url("../images/backgrounds/patterns/hex.png")
+  &.bg-wave
+    background-image: url("../images/backgrounds/patterns/wave.png")
+  &.bg-bricks
+    background-image: url("../images/backgrounds/patterns/bricks.png")
+  &.bg-purple
+    background-image: url("../images/backgrounds/patterns/purple-blur.png")
+  &.bg-orange
+    background-image: url("../images/backgrounds/patterns/orange-blur.png")
+  &.bg-random-grey
+    background-image: url("../images/backgrounds/patterns/random_grey_variations.png")
+
+.locked
+  text-align: center
+  font-size: 22px
+  font-weight: bold
+  padding-top: 28px
+  color: #4d4d4d
+  span
+    display: inline-block
+    text-decoration: underline
+    color: #71838e
+    &:before
+      font-size: 20px
+      padding: 0 1px 0 5px
+      display: inline-block
+      text-decoration: none
+    &:hover
+    &:hover:before
+      color: #5b6971
+      opacity: 1
+
+
+#menu-filter
+  .menu-contents
+    padding-top: 7px
+  p
+    padding: 10px 0 2px 8px
+    color: #8c8c8c
+    line-height: 18px
+  
+
+.filter-list
+  li:hover i
+    color: #4d4d4d
+  .selected:after
+    content: "\e910"
+    float: right
+    color: #999
+    font-family: Trellicons
+    font-size: 12px
+  li
+    border-radius: 3px
+    line-height: 30px
+    height: 30px
+    padding: 0 14px 0 40px
+    vertical-align: top
+    color: #4d4d4d
+    cursor: pointer
+    background-color: transparent
+    i
+      margin: 0 8px 0 -38px
+      position: relative
+      top: 50%
+      transform: translateY(-50%)
+    .member-container
+      margin: 2px 0 0 -38px
+      .card-member
+        color: #4D4D4D
+  li:hover
+  .selected:hover:after
+    background-color: #298FCA
+    color: #fff
+.tall
+  .dark
+    color: #4d4d4d
+  li
+    line-height: 38px
+    height: 38px
+    padding-left: 4px
+    margin-bottom: 2px
+    color: #8c8c8c
+    &:before
+      height: 30px
+      width: 30px
+      border-radius: 3px
+      margin-right: 8px
+      content: ""
+      display: inline-block
+      top: 50%
+      transform: translateY(-50%)
+      position: relative
+      float: left
+    &:hover
+      color: #fff
+    + hr
+      padding-top: 10px
+
+#labels
+  .menu-contents
+    padding-top: 7px
+
+.light-list
+  padding-top: 4px
+  li
+    line-height: 18px
+    cursor: pointer
+    text-decoration: underline
+    color: #8c8c8c
+    padding: 8px 8px
+    &:hover
+      color: #4d4d4d
+      background-color: #D6DADC
+      border-radius: 3px
+  hr
+    padding-top: 14px
+    margin-bottom: 14px
+
+.label-list
+  padding: 12px 36px 0 0
+  li
+    position: relative
+    height: 34px
+    width: 100%
+    margin-bottom: 4px
+    margin-left: -3px
+    div
+      position: absolute
+      left: 0px
+      right: 0px
+      height: 100%
+      border-radius: 3px
+      cursor: pointer
+      z-index: 3
+      left: 3px
+      &:hover
+        left: 8px
+        + .label-background,
+        + .label-background + .label-background-overlay
+          left: 0px
+    div.label-background,
+    div.label-background-overlay
+      z-index: 2
+    .edit-icon
+      position: absolute
+      right: -38px
+      width: 34px
+      height: 34px
+      border-radius: 3px
+      color: #8c8c8c
+      z-index: 3
+      text-align: center
+      cursor: pointer
+      &:before
+        line-height: 34px
+        font-size: 12px
+      &:hover
+        background-color: #D6DADC
+        &:before
+          color: #111
+    .check-icon
+      float: right
+      padding-right: 10px;
+      vertical-align: middle;
+      // position: absolute
+      // right: 10px
+      &:before
+        color: #FFF
+        text-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 2px #000
+        vertical-align: middle;
+
+.label-background-overlay
+  background: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2))
+
+.light-button
+  display: inline-block
+  line-height: 30px
+  height: 30px
+  text-align: center
+  cursor: pointer
+  text-decoration: underline
+  padding: 0 4px
+  box-sizing: border-box
+  color: #8c8c8c
+  &:hover
+    color: #4d4d4d
+    background-color: #D6DADC
+    border-radius: 3px
+  i:before
+    font-size: 18px
+    text-decoration: none
+    display: inline-block
+    width: 30px
+
+.empty
+  width: 100%
+  height: 70px
+  line-height: 70px
+  text-align: center;
+  border-radius: 3px
+  border: 1px dashed #C4C9CC
+  background-color: #E2E4E6
+  color: #8c8c8c
+
+#menu-archived
+  color: #8c8c8c
+  > div
+    padding-top: 7px
+    .no-results
+      width: 100%
+      height: 70px
+      line-height: 70px
+      text-align: center;
+      border-radius: 6px
+      border: 1px dashed #C4C9CC
+      background-color: #E2E4E6
+  .light-button
+    width: 33%
+    margin-left: 2%
+  input
+    display: inline-block
+    width: 65%
+    margin-bottom: 12px
+  ul
+    &:before
+      clear: both
+      display: block
+      content: ""
+      padding-top: 8px
+    li
+      width: 258px
+      text-align: left
+      margin: 0 auto 10px auto
+      .arch-card,
+      span
+        cursor: pointer
+      .arch-card + span
+        line-height: 35px
+        padding-left: 8px
+      span
+        text-decoration: underline
+        &:hover
+          color: #4D4D4D
+      &.arch-list
+        border-bottom: 1px solid #ccc
+        box-sizing: border-box
+        padding: 0 0 10px 8px
+        text-align: right
+        width: 100%
+        > i
+          float: left
+          line-height: 24px
+          margin-bottom: 10px
+          color: #4D4D4D
+          text-align: left
+        div
+          display: inline-block
+          padding-right: 10px
+    + div
+      display: none
+    &:empty + div
+      display: block
+  .menu-contents > a span + span
+    display: none
+  &.lists-active
+    .light-button
+      width: 36%
+    .dropdown-input
+      width: 62%
+    .menu-contents > a span
+      display: none
+      + span
+        display: inline
+
+.menu-list li .dropdown
+  top: 37px
+  left: 0
+  line-height: 18px
+
+#board-members-dropdown
+  padding: 0 10px 10px
+  color: #8C8C8C
+  h2
+    margin: 0 0 10px
+  input
+    margin-bottom: 15px
+  hr
+    margin: 0 0 8px
+  p
+    padding: 0 6px
+  .light-button
+    padding: 6px 8px
+    line-height: 18px
+    text-align: left
+    height: auto
+  
+
+#copy-board-dropdown
+  color: #8c8c8c
+  label
+    display: block
+    color: #4D4D4D
+    padding: 2px 10px 0 10px
+    font-weight: bold
+    line-height: 27px
+    input[type="text"]
+      margin-bottom: 5px
+      font-weight: normal
+    &:last-of-type
+      line-height: 22px
+      font-weight: normal
+      padding: 8px 10px 6px 10px
+  > p
+    line-height: 18px
+    padding: 0 0 8px 10px
+    + p
+      padding: 8px 0 0 13px
+    &:last-of-type
+      padding-bottom: 17px
+  input[type="checkbox"]
+    display: inline-block
+    margin: 0 6px 0 2px
+    position: relative
+    top: -1px
+  .button
+    padding: 9px 30px
+    margin-left: 10px
+    line-height: normal
+  .link:hover
+    color: #4d4d4d
+  .privacy-list
+    color: #444
+      
+#add-member-dropdown
+  top: 145px
+  left: 12px
+  > div
+    padding: 11px 10px 0 10px
+    input
+      padding-left: 7px
+    p
+      color: #8C8C8C
+      padding: 14px 6px 2px 6px
+      line-height: 18px
+    .light-list
+      padding-top: 0
+    li
+      font-weight: normal
+      line-height: 18px
+      &.selected:after
+        content: "\e910"
+        float: right
+        color: #999
+        font-family: Trellicons
+        font-size: 12px
+    hr
+      margin-bottom: 6px    
+
+#list-actions
+  .check-icon
+    padding-left: 7px
+
+#copy-list
+#list-actions
+#move-list
+#move-all
+#archive-all
+  top: 36px
+  left: 250px
+  .button
+    padding: 11px 30px
+    
+#move-list
+#move-card
+  label
+    width: 100%
+    margin-left: 0
+    display: block
+    margin-bottom: 8px
+    + label
+      margin-bottom: 16px
+  form
+    padding-top: 7px
+
+#user-dropdown-sm
+  top: 141px
+  left: 202px
+  padding-top: 10px
+  i
+    dropdown-header-i()
+    top: 11px
+    right: 13px
+  div:first-of-type
+    position: relative
+    display: inline-block
+    vertical-align: top
+    width: 50px
+    height: 50px
+    line-height: 50px
+    margin-left: 12px
+    text-align: center
+    background-color: #D6DADC
+    border-radius: 3px
+    color: #4d4d4d
+    font-size: 16px
+    font-weight: bold
+    cursor: pointer
+    &:hover:after
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      line-height: 50px
+      border-radius: 3px
+      text-align: center
+      content: "Change"
+      text-decoration: underline
+      background-color: rgba(0, 0, 0, 0.5)
+      color: #FFF
+      font-size: 12px
+  div:nth-of-type(2)
+    display: inline-block
+    padding-left: 8px
+    h3
+      font-size: 16px
+      font-weight: bold
+      color: #444
+      padding-bottom: 4px
+      cursor: pointer
+      &:hover
+        color: #111
+        text-decoration: underline
+    span
+      color: #8C8C8C
+      padding-bottom: 4px
+      display: block
+      &:last-of-type
+        padding-bottom: 2px
+  .link:hover
+    color: #111
+
+#bio-dropdown
+  top: 141px
+  left: 202px
+
+#copy-list
+#copy-card
+#bio-dropdown
+  label
+    font-weight: bold
+    width: 100%
+    box-sizing: border-box
+    padding-bottom: 6px
+    display: block
+  [type="text"]
+    margin-bottom: 14px
+  .button
+    padding: 11px 20px
+  textarea
+    padding: 8px 6px
+    height: 72px
+    margin-bottom: 18px
+    resize: vertical
+    max-height: 400px
+  p
+    color: #8c8c8c
+    line-height: 18px
+    margin: 0 10px
+
+#copy-list
+  form
+    padding-top: 10px
+  .button
+    padding: 11px 30px
+    
+
+
+#add-options-members-dropdown
+#add-options-labels-dropdown
+#add-options-position-dropdown
+  top: 444px
+  left: 242px
+  > div
+    padding: 11px 10px 0 10px
+  input
+    padding-left: 7px
+  ul
+    padding-top: 12px
+    li
+      font-weight: normal
+  .empty
+    margin-top: 12px
+
+#add-options-members-dropdown
+  li
+    margin-bottom: 0
+    i
+      display: inline-block
+
+#add-options-labels-dropdown
+  .label-list
+    li
+      box-sizing: border-box
+      padding: 0
+      &:hover
+        background-color: transparent
+        
+  .light-list
+    padding-top: 2px
+    hr
+      padding-top: 6px
+      margin: 0 0 6px 0 
+  div:after
+    background-color: #fff
+  div:hover:after
+    background-color: rgba(0, 0, 0, 0.21)
+    
+#add-options-position-dropdown
+  > div
+    padding-top: 7px
+
+.dropdown-select
+  -webkit-appearance: none
+  border: none
+  width: 77%
+  background: transparent
+  padding: 17px 8px 8px 5px
+  font-family: "Helvetica Neue"
+  font-weight: bold
+  outline: none
+  cursor: pointer
+  font-size: 14px
+  transform: scale(1.29)
+  transform-origin: 0 0
+  color: #4D4D4D
+  box-sizing: border-box
+  display: block
+
+.dropdown-select-label
+  display: inline-block
+  border-radius: 3px
+  box-sizing: border-box
+  width: 70%
+  height: 52px
+  border: 1px solid #E2E4E6
+  border-bottom-color: #CDD2D4
+  overflow: hidden
+  background: linear-gradient(to bottom, #fff 0, #F8F9F9 100%)
+  position: relative
+  margin-bottom: 6px
+  span
+    position: absolute
+    top: 8px
+    left: 7px
+    font-size: 12px
+    font-weight: bold
+    color: #8c8c8c
+  &:hover
+    background: none
+    background-color: #298FCA
+    color: #fff
+    select
+    span
+      color: #fff
+  &:focus
+    outline: none
+  + label
+    width: 27%
+    margin-left: 3%
+
+#move-card
+  z-index: 3
+  left: 285px
+  top: 224px
+  label:nth-of-type(2)
+    width: 70%
+    display: inline-block
+  label:nth-of-type(3)
+    width: 27%
+    margin-left: 3%
+    display: inline-block
+  .button
+    padding: 11px 30px
+
+#copy-card
+  z-index: 3
+  left: 285px
+  top: 258px
+  form
+    padding-top: 9px
+  .select-menus
+    padding-bottom: 8px
+    label:nth-last-of-type(3)
+      margin-bottom: 8px
+    label:nth-last-of-type(2)
+      width: 70%
+      display: inline-block   
+      margin-left: 0 
+    label:last-of-type
+      width: 27%
+      margin-left: 3%
+      display: inline-block
+  textarea
+    padding: 9px 7px
+    margin-bottom: 12px
+  label
+    color: #4D4D4D
+  .checkboxes
+    padding: 1px 0 19px
+    label
+      font-weight: normal
+      padding: 0 0 8px 1px
+      span
+        color: #8c8c8c
+  [type="checkbox"]
+    position: relative
+    left: -3px
+    top: -2px
+  .button
+    padding: 11px 30px
+
+.mini-modal
+  position: absolute
+  z-index: 2
+  font-size: 14px
+  pointer-events: none
+  .button
+    padding: 11px 30px
+    pointer-events: auto;
+  .card
+    width: 254px
+    margin-bottom: 15px
+    pointer-events: auto;
+    &:hover
+      background-color: #fff
+  textarea
+    height: 105px
+    width: 100%
+    min-height: 40px
+    line-height: 18px !important
+    resize: none
+    border: none
+    outline: none
+    box-sizing: border-box
+    font: inherit
+    font-size: 14px
+    padding: 5px 8px 15px 8px
+    color: #4D4D4D
+  aside
+    position: absolute
+    top: 0
+    left: 262px
+    width: 100%
+    pointer-events: none
+    a
+      pointer-events: auto;
+      display: block
+      float: left
+      clear: left
+      width: auto
+      padding: 8px 12px 8px 11px
+      border-radius: 3px
+      background-color: rgba(0, 0, 0, 0.6)
+      color: rgba(255, 255, 255, 0.8)
+      margin-bottom: 4px
+      font-size: 14px
+      cursor: pointer
+      transition: margin-left 0.1s
+      &:before
+        padding-right: 7px
+        color: inherit
+      &:hover
+        background-color: #000
+        color: #fff
+        margin-left: 5px
+        transition: margin-left 0.1s
+
+.screen
+.image-screen
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  padding: 0 10px
+  background-color: rgba(0, 0, 0, 0.6)
+  z-index: 2
+  overflow: auto
+  
+.image-screen
+  z-index: 5
+  img
+    margin-top: 18px
+    margin-left: 50%
+    transform: translateX(-50%)
+    border-radius: 3px
+  footer
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 150px
+    text-align: center
+    div
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 0
+      display: inline-block
+      color: #fff
+      line-height: 28px
+      padding-bottom: 9px
+      h2
+        font-weight: bold
+        font-size: 18px
+      p
+        font-size: 14px
+      .horiz-list li
+        font-size: 14px
+        color: #fff
+        &:before
+          color: #fff
+  header > i,
+  footer > i  
+    position: absolute
+    color: #999
+    &:before
+      font-size: 20px
+  header .x-icon
+    right: 0px
+    width: 28px
+    text-align: center
+  header .x-icon
+  .back-icon
+  .forward-icon
+    line-height: 32px
+    cursor: pointer
+    &:hover
+      color: #FFF
+      transition: all 0.08s
+      font-size: 24px
+      &:before
+        font-size: 24px
+        transition: all 0.08s
+  .back-icon
+  .forward-icon
+    width: 60px
+    line-height: 150px
+  .back-icon
+    bottom: 0
+    left: 0
+    float: left
+    text-align: right
+  .forward-icon
+    bottom: 0
+    right: 0
+    float: right
+    text-align: left
+
+#modal-container
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  overflow: auto
+  &:empty
+    display: none
+
+#modal
+  padding-bottom: 35px
+  margin: 48px 0 78px 50%
+  transform: translateX(-50%)
+  width: 730px
+  min-height: 1000px
+  box-sizing: border-box
+  background-color: #EDEFF0
+  border-radius: 3px
+  position: relative
+  line-height: 18px
+  font-size: 14px
+  z-index: 3
+  &:after
+    content: ""
+    clear: both
+    display: block
+  header
+    position: static
+    display: block
+    padding: 12px 50px 13px 50px
+    p
+      color: #8c8c8c
+      i
+        padding-left: 9px
+    .link:hover
+      color: #4D4D4D
+    textarea
+      color: #4D4D4D
+      display: block
+      font-size: 18px
+      margin: 0 0 0 -5px
+      padding: 6px 6px 3px 6px
+      line-height: 1
+      min-height: 30px
+      resize: none
+    > i
+      width: 0
+  header input,
+  section h2
+    font-weight: bold
+    font-size: 18px
+    color: #4D4D4D
+  header > i,
+  section h2
+    position: relative    
+    &:before
+      position: absolute
+      left: -35px
+      top: -6px
+      font-size: 20px
+      color: #999
+  header > i:before
+    top: 0
+    left: -35px
+  section h2
+    padding-bottom: 5px
+  h2
+  section h2
+    font-size: 16px
+    font-weight: bold
+    color: #4d4d4d
+    &:before
+      left: -33px
+      top: -7px
+  > i
+    position: absolute
+    top: 4px
+    right: 9px
+    &:before
+      font-size: 20px
+      color: rgba(0, 0, 0, 0.3)
+      transition: color 0.2s
+    &:hover:before
+      color: rgba(0, 0, 0, 0.65)
+      transition: color 0.2s
+  .cover-image figure
+    width: 100%
+    height: 160px
+    text-align: center
+    background-color: #fff
+    box-shadow: inset 0 -10px 40px rgba(0, 0, 0, 0.15)
+    border-radius: 3px 3px 0 0
+    img
+      height: 100%
+      &:hover:after
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background-color: rgba(255, 255, 255, 0.3)
+        z-index: 4
+  .cover-image:empty + .archived-banner
+    border-radius: 3px 3px 0 0
+.modal-main
+  margin-left: 50px
+  padding-right: 20px
+  width: 528px
+  height: 100px
+  box-sizing: border-box
+  display: inline-block
+  .link
+    color: #8c8c8c
+    &:hover
+      color: #4D4D4D
+  p
+    color: #8c8c8c
+    padding-bottom: 6px
+    display: inline-block
+  .button
+    padding: 8px 20px
+  .light-list 
+    padding-bottom: 8px
+    li
+      padding: 6px 8px
+      
+.modal-buttons
+  width: 152px
+  height: 100px
+  display: inline-block
+  vertical-align: top
+  padding-right: 12px
+  box-sizing: border-box
+  hr
+    margin: 6px 0 6px
+  ul:nth-of-type(1)
+  ul:nth-of-type(2)
+    padding: 7px 0 15px
+    li
+      white-button()
+      margin-bottom: 6px
+      i:nth-child(2)
+        display: inline-block
+        line-height: 21px
+        margin-left: 10px
+        background-color: #61BD4F
+        border-radius: 3px
+        padding: 0 7px
+        &:before
+          color: #fff
+      &:hover
+        i:nth-child(2)
+          background-color: rgba(255,255,255,.3)
+  ul:nth-of-type(2)
+    padding-bottom: 8px
+  .light-list
+    padding-top: 4px
+    li
+      line-height: 18px
+      cursor: pointer
+      text-decoration: underline
+      color: #8c8c8c
+      padding: 8px 8px
+      &:hover
+        color: #4d4d4d
+        background-color: #D6DADC
+        border-radius: 3px
+      
+.modal-outer-list
+  > li
+    padding-bottom: 27px
+  .checklist-section
+    padding-bottom: 25px
+.modal-details-list
+  li
+    display: inline-block
+    vertical-align: top
+    padding: 3px 0 18px
+    margin-right: 28px
+    h3
+      color: #8c8c8c
+      padding-bottom: 4px
+    i
+      width: 30px
+      height: 30px
+      line-height: 30px
+      background-color: #E2E4E6
+      display: inline-block
+      border-radius: 3px
+      text-align: center
+      cursor: pointer
+      &:before
+        top: -1px
+      &:hover
+        background-color: #D6DADC
+        &:before
+          color: #4D4D4D
+    .label
+      height: 30px
+      width: 40px
+      border-radius: 3px
+  .due-date-section
+    div
+      margin-top: 2px
+      border-radius: 3px
+      padding: 0 6px 0 2px
+      text-decoration: underline
+      line-height: 30px
+      cursor: pointer
+    input
+      &:checked + span
+        display: none
+  li:last-child
+    margin-right: 0
+  .checkbox
+    &:before
+      top: -6px
+    &:hover:before
+      color: rgba(255,255,255,.5)
+    &:checked:before
+      color: #fff
+
+.details-section .checkbox
+  float: none
+   
+form.description
+  position: relative
+  display: block
+  p + .link
+    padding-left: 8px
+    &:hover
+      color: #111
+  textarea
+    display: none
+    + div
+      display: none
+  &.editing
+    textarea
+      display: block
+      + div
+        display: block
+        + p
+          display: none
+    p:first-child + span,
+    p:last-child,
+    .textarea-overlay
+      display: none
+  .textarea-overlay
+    color: #4D4D4D
+    padding-bottom: 8px
+    display: block
+  .textarea-toggle:focus
+    margin-bottom: 6px
+    
+.attachment-list
+  padding: 8px 0 6px
+  figure
+    width: 108px
+    height: 78px
+    float: left
+    border-radius: 3px
+    background-color: #E2E4E6
+    border: 1px solid #D6DADC
+    overflow: hidden
+    position: relative
+  img
+    display: block
+    border-radius: 3px  
+    width: 100%
+    transform: translate(-50%, -50%)
+    position: absolute
+    top: 50%
+    left: 50%
+  p
+    display: block
+  li
+    margin-bottom: 8px
+    border-radius: 3px
+    cursor: pointer
+    &:after
+      clear: left
+      content: ""
+      display: block
+    &:hover
+      background-color: #E2E4E6
+      figure
+        background-color: #D6DADC
+    &:last-child
+      margin-bottom: 0
+    div
+      float: left
+      padding: 11px 0 0 10px
+      line-height: 12px
+      p:first-child
+        color: #4D4D4D
+      p:second-child
+        color: #8c8c8c
+      ul
+        padding-top: 6px
+        li:first-child
+          padding-left: 3px
+            
+.horiz-list
+  li
+    display: inline-block
+    padding-right: 11px
+    text-decoration: underline
+    color: #8c8c8c
+    cursor: pointer
+    &:hover
+      color: #111
+      &:before
+        color: #4d4d4d
+    &:before
+      display: inline-block
+      text-decoration: none
+      padding-right: 4px
+    &:last-child
+      padding-right: 0       
+
+.attachment-section
+  .light-list
+    padding-bottom: 10px
+  .horiz-list li:hover
+    color: #4D4D4D
+  &:empty
+    display: none
+
+.checklist-section
+  position: relative
+  h2 + ul
+    position: absolute
+    right: 2px
+    top: 0
+    + form
+      display: none
+  .dropdown-input
+    overflow: hidden
+    display: block
+    margin-bottom: 2px
+    background: transparent
+    resize: none
+    border: none
+    box-shadow: none
+    padding: 8px 6px 6px 8px
+    min-height: 36px
+    color: #8c8c8c
+    &:focus
+      color: #4d4d4d
+      padding: 7px
+      resize: vertical
+      background-color: #fff
+      box-shadow: 0.5px 0.5px 0.5px #298FCA
+      border: 1px solid #298FCA
+    + div
+      display: none
+      padding: 4px 6px 0 0
+      .x-icon
+        x-icon-close()
+      div
+        float: right
+    &:focus + div
+      display: block
+  .horiz-list li:nth-child(2)
+    display: none
+  &.hide-completed .horiz-list
+    li:first-child
+      display: none
+    li:nth-child(2)
+      display: inline-block
+  &.edit-title
+    h2,
+    h2 + ul
+      display: none
+    h2 + ul + form
+      display: block
+      padding-bottom: 8px
+      &:before
+        position: absolute
+        top: -7px
+        left: -33px
+        color: #999
+        font-size: 20px
+      .textarea-toggle
+        min-height: 54px 
+        font-size: 16px
+        font-weight: bold
+        color: #4d4d4d
+        
+.checklist-bar
+  padding: 2px 0 1px
+  span
+      width: 0
+      display: inline-block
+      font-size: 11px
+      color: #999
+      position: relative
+      left: -31px
+  >div
+    display: inline-block
+    height: 8px
+    width: 100%
+    border-radius: 4px
+    background-color: #D6DADC
+    position: relative
+    overflow: hidden
+    div
+      background-color: #5BA4CF
+      content: ""
+      position: absolute
+      left: 0
+      right: 50%
+      top: 0
+      bottom: 0
+      border-radius 4px 0 0 4px
+      transition: all 0.3s
+
+.complete-bar
+  &:after
+    border-radius: 4px
+    right: 0
+    transition: all 0.3s
+    background-color: #61BD4F
+      
+.checklist
+  li
+    position: relative
+    margin-left: -38px
+    padding: 5px 2px 3px 5px
+    border-radius: 3px
+    display: block
+    cursor: pointer
+    &:hover
+      background-color: #E2E4E6
+    &:after
+      clear: both
+      content: ""
+      display: block
+  .textarea-focused:hover
+    background-color: transparent
+  s
+    text-decoration: none
+    color: #4d4d4d
+    padding-left: 34px
+    display: block
+  [type="checkbox"]
+    border: 1px solid #D6DADC
+    border-color: #D6DADC #D6DADC #C4C9CC
+    height: 20px
+    width: 20px
+    background-color: #fff
+    box-shadow: 0 2px 3px rgba(0,0,0,.1)
+    margin: 0
+    &:checked
+      background-color: transparent
+      box-shadow: none
+      + form + s
+        text-decoration: line-through
+        font-style: italic
+        color: #8c8c8c
+    &:hover:before
+      color: #999
+    &:checked:before
+      color: #999
+    + form
+      margin: -8px -6px 8px 0
+      padding-left: 25px
+      &:after
+        display: block
+        content: ""
+        clear: both
+  .textarea-toggle:focus
+    min-height: 52px
+  form
+    display: none
+  .textarea-focused
+    form
+      display: block
+    s
+      display: none
+  p
+    display: block
+    padding: 4px 0 0 21px
+
+.checkbox      
+  -webkit-appearance: none
+  width: 18px
+  height: 18px
+  border-radius: 3px
+  border: 1px solid #fff
+  background-color: rgba(255, 255, 255, 0.3)
+  float: left
+  vertical-align: middle
+  top: -1px
+  position: relative
+  outline: none
+  text-align: center
+  cursor: pointer
+  &:hover:before
+  &:checked:before
+    font-family: Trellicons
+    content: "\e910"
+    font-size: 12px
+    position: relative
+
+.textarea-toggle
+  overflow: hidden
+  border: none
+  background-color: transparent
+  box-shadow: none
+  outline: none
+  resize: none
+  font: inherit
+  color: #444
+  padding: 0
+  min-height: 10px
+  &:focus
+    min-height: 110px
+    width: 100%
+    background-color: rgba(0,0,0,.03)
+    border: 1px solid rgba(0,0,0,.15)
+    box-shadow: inset 0 1px 6px rgba(0,0,0,.1)
+    padding: 7px
+    margin-bottom: 3px
+    box-sizing: border-box
+    border-radius: 3px
+    + div
+      display: block
+  + div
+    display: none
+    .light-button
+      float: right
+      margin: 0 2px
+      padding: 0 8px
+    .x-icon
+      x-icon-close()
+
+
+.comment-section
+  > div
+    position: relative
+  > div:first-of-type
+    padding-bottom: 48px
+  .comment 
+    margin: 8px 4px 0 0
+    textarea
+      height: auto
+
+.activity-section
+  position: relative
+  h2 + ul
+    position: absolute
+    right: 2px
+    top: 0
+
+.modal-activity-list
+.comment-section
+  .member-container
+    position: absolute
+    left: -38px
+    top: -1px
+    color: #4d4d4d
+    .card-member
+      cursor: default
+      
+.modal-activity-list
+  padding-top: 8px
+  overflow: hidden
+  margin-left: -40px
+  padding-left: 40px
+  li
+    position: relative
+    padding-bottom: 8px
+    border-bottom: 1px solid #E2E4E6
+    margin: 10px 0
+    &:last-child
+      border: none
+    &.edit-activity       
+      > .comment
+        display: block
+      > .static-comment,
+      > small
+        display: none 
+    .member-container
+      top: 1px
+    h3
+      font-weight: bold
+      color: #4D4D4D
+      padding-bottom: 8px
+    .comment
+      display: none
+      margin-bottom: 65px
+      p
+        display: none
+    small
+      display: block
+    .static-comment
+      margin: 0
+      display: inline-block
+      padding: 9px 11px
+      margin-bottom: 10px
+    > p
+      color: #4D4D4D
+    .comment textarea:invalid + div + div
+      position: absolute
+      bottom: -75px
+      p
+        display: block
+      
+
+.comment
+  background-color: #FFF
+  border-radius: 3px
+  position: relative
+  padding-bottom: 4px
+  color: #4d4d4d
+  cursor: text
+  box-shadow: 0 1px 3px rgba(0,0,0,.33)
+  &:hover
+    background-color: #fff
+  textarea
+    font: inherit
+    padding: 9px 6px 0 12px
+    box-sizing: border-box
+    min-height: 18px
+    width: 100%
+    border: none
+    resize: none
+    background-color: transparent
+    &:invalid + div + div input
+      background: none
+      background-color: #E2E4E6
+      cursor: default
+      outline: none
+      font-weight: normal
+      color: #8c8c8c
+      box-shadow: none
+  div:first-of-type
+    padding: 10px 0 2px 0
+    &:after
+      clear: both
+      content: ""
+      display: block
+  div:last-child
+    position: absolute
+    bottom: -45px
+  a
+    float: right
+    text-decoration: none
+    width: 30px
+    margin-right: 4px
+    &:first-child
+      margin-right: 6px
+  .x-icon
+    x-icon-close()
+
+.archived-banner
+  line-height: 54px
+  font-size: 1pc
+  color: #4D4D4D
+  background-size: 14px 14px
+  background-color: #FDFAE5
+  background-image: linear-gradient(to bottom right,rgba(0,0,0,.05) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.05) 50%,rgba(0,0,0,.05) 75%, transparent 75%, transparent)  
+  i:before
+    color: #999
+    font-size: 20px
+    padding: 0 12px 0 14px
+    position: relative
+    top: 2px
+
+.red-button
+  background: #EB5A46 !important
+  color: #FFF !important
+  border: 1px solid #EB5A46 #EB5A46 #B04632 !important
+  &:hover
+    background-color: #CF513D !important
+    border-color: #CF513D #CF513D #933B27 !important
+  i:before
+    color: #FFF
+
+#checklist-dropdown
+  top: 426px
+  left: 845.5px
+  z-index: 4
+  form
+    padding: 9px 10px 0 10px
+  .button
+    padding: 11px 30px
+  .dropdown-input
+    margin-bottom: 14px
+  select
+    width: 100%
+    font: inherit
+    color: #4d4d4d
+    margin-bottom: 22px
+
+.not-implemented
+.not-implemented:before
+  cursor: not-allowed !important
+
+.small-option
+  font-size: 14px
+
+.star-icon:before
+  content: "\e94c"
+
+.private-icon:before
+  content: "\e943"
+
+.search-icon:after
+  float: right
+  content: "\e948"
+
+.create-icon:before
+  content: "\e902"
+
+.info-icon:before
+  content: "\e92e"
+
+.notifications-icon:before
+  content: "\e93a"
+
+.goto-icon:before
+  content: "\e921"
+
+.x-icon:before
+  content: "\e915"
+
+.trello-icon:before
+  content: "\e908"
+
+.dash-icon:before
+  content: "\e946"
+
+.check-icon:before
+  content: "\e910"
+
+.person-icon:before
+  content: "\e934"
+
+.people-icon:before
+  content: "\e93e"
+
+.globe-icon:before
+  content: "\e944"
+
+.add-icon:before
+  content: "\e901"
+
+.filter-icon:before
+  content: "\e923"
+
+.power-icon:before
+  content: "\e942"
+
+.stickers-icon:before
+  content: "\e94e"
+
+.more-icon:before
+  content: "\e93f"
+
+.activity-icon:before
+  content: "\e900"
+
+.gear-icon:before
+  content: "\e926"
+
+.label-icon:before
+  content: "\e930"
+
+.file-icon:before
+  content: "\e905"
+
+.email-icon:before
+  content: "\e91e"
+
+.export-icon:before
+  content: "\e94b"
+
+.back-icon:before
+  content: "\e907"
+
+.forward-icon:before
+  content: "\e938"
+
+.no-icon:before
+  content: ""
+  margin-left: 17px
+
+.sub-icon:before
+  content: "\e94f"
+
+.description-icon:before
+  content: "\e917"
+
+.comment-icon:before
+  content: "\e916"
+
+.attachment-icon:before
+  content: "\e906"
+
+.checklist-icon:before
+  content: "\e911"
+
+.clock-icon:before
+  content: "\e914"
+
+.edit-icon:before
+  content: "\e91D"
+
+.card-icon:before
+  content: "\e90f"
+
+.plus-icon:before
+  content: "\e902"
+  
+.download-icon:before
+  content: "\e91a"
+
+.cover-icon:before
+  content: "\e90d"
+  
+.comment-icon:before
+  content: "\e916"
+  
+.smiley-icon:before
+  content: "\e91f"
+
+.email-icon:before
+  content: "\e935"
+
+.send-icon:before
+  content: "\e945"
+  
+.minus-icon:before
+  content: "\e946"
+
+::-webkit-input-placeholder
+  color: #8c8c8c
+
+::-webkit-scrollbar-track
+  margin: 2px 12px
+
+::-webkit-scrollbar-track:horizontal
+  background-color: rgba(0, 0, 0, 0.15)
+  border-radius: 6px
+
+::-webkit-scrollbar-thumb:horizontal
+  background-color: rgba(255, 255, 255, 0.4)
+  border-radius: 6px
+
+::-webkit-scrollbar-track:vertical
+  background-color: rgba(0, 0, 0, 0.08)
+  border-radius: 6px
+
+::-webkit-scrollbar-thumb:vertical
+  background-color: rgba(0, 0, 0, 0.12)
+  border-radius: 6px
+
+::-webkit-scrollbar
+  height: 13px
+  width: 8px
+
+@media (max-width: 900px)
+  .search-container.active
+    width: 180px
+@media (max-width: 700px)
+  .boards
+    span
+      display: none
+    &:before
+      padding-right: 0px
+  .user-info .split-button-1
+    border-radius: 3px
+  .split-button-2
+    display: none
+  .search-container
+    width: 30px
+  #search-dropdown
+    width: 500px
+    left: 45px !important

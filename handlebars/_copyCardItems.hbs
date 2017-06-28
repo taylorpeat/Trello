@@ -1,0 +1,25 @@
+{{#if currentCard.checklists }}
+  <label>
+    <input name="checklists" type="checkbox" checked="true">Checklists <span>({{ currentCard.checklists.length }})<span>
+  </label>
+{{/if }}
+{{#if currentCard.labelIds }}
+  <label>
+    <input name="labels" type="checkbox" checked="true">Labels <span>({{ currentCard.labelIds.length }})<span>
+  </label>
+{{/if }}
+{{#if currentCard.memberIds }}
+  <label>
+    <input name="members" type="checkbox" checked="true">Members <span>({{ currentCard.memberIds.length }})<span>
+  </label>
+{{/if }}
+{{#if currentCard.attachments }}
+  <label>
+    <input name="attachments" type="checkbox" checked="true">Attachments <span>({{ currentCard.attachments.length }})<span>
+  </label>
+{{/if }}
+{{#if currentCard.comments }}
+  <label>
+    <input name="comments" type="checkbox" checked="true">Comments <span>({{ currentCard.comments.length }})<span>
+  </label>
+{{/if }}

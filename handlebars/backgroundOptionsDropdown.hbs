@@ -1,0 +1,22 @@
+<h2>Background Options
+  <i class="x-icon sm-icon"></i>
+</h2>
+<ul>
+  <li class="title">Display Type</li>
+  <li class="cover-item">Cover
+    {{#if (equal size 'cover') }}<i class="check-icon sm-icon"></i>{{/if }}
+  </li>
+  <li class="tile-item">Tile
+    {{#if (equal size 'auto') }}<i class="check-icon sm-icon"></i>{{/if }}
+  </li>
+  <hr>
+  <li class="title">Board Text</li>
+  <li class="light-item">Light
+    {{#unless darkFont }}<i class="check-icon sm-icon"></i>{{/unless }}
+  </li>
+  <li class='dark-item'>Dark
+    {{#if darkFont }}<i class="check-icon sm-icon"></i>{{/if }}
+  </li>
+  <hr>
+  <a class="all-activity delete-bg">Delete background</a>
+</ul>

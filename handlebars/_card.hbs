@@ -1,0 +1,24 @@
+<div class="card {{#if archived }}arch-card{{/if}}">
+  <i class="edit-toggle edit-icon sm-icon"></i>
+  <div class="cover-image">
+    {{>coverImage }}
+  </div>
+  <div class="card-info">
+    {{> cardLabels }}
+    <p>{{ title }}</p>
+  </div>
+  <div class="card-icons">
+    {{#if subscribed }}
+    <i class="sub-icon sm-icon">
+    </i>{{/if}}{{#if renderDate }}<i class="clock-icon sm-icon {{dueClass dueDate }} {{#if completed }}completed{{/if }}">{{ renderDate.month }} {{ renderDate.day }}
+    </i>{{/if}}{{#if description }}<i class="description-icon sm-icon">
+    </i>{{/if}}{{#if comments }}<i class="comment-icon sm-icon">{{ totalComments }}
+    </i>{{/if}}{{#if attachments }}<i class="attachment-icon sm-icon">{{ totalAttachments }}
+    </i>{{/if}}{{#if checklistItems }}<i class="checklist-icon sm-icon">{{ completedChecklistItems }}/{{ checklistItems }}
+    </i>{{/if}}{{#if archived }}<i class="file-icon sm-icon"> Archived
+    </i>{{/if}}
+  </div>
+  <div class="members">
+    {{> cardMembers }}
+  </div>
+</div>

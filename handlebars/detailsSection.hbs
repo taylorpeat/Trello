@@ -1,0 +1,32 @@
+<ul class="modal-details-list">
+  {{#if members }}
+  <li class="members-section">
+    <h3>Members</h3>
+    {{>cardMembers }}
+    <div class="member-container">
+      <i class="plus-icon sm-icon"></i>
+    </div>
+  </li>{{/if }}{{#if labels }}<li class="labels-section">
+    <h3>Labels</h3>
+    {{>cardModalLabels }}
+    <div class="member-container">
+      <i class="plus-icon sm-icon"></i>
+    </div>
+  </li>{{/if }}{{#if dueDate }}<li class="due-date-section">
+    <h3>Due Date</h3>
+    <div id="dueDateDisplay" class="{{dueClass dueDate }}{{#if completed }} completed{{/if }}">
+      <input id="dueDateCheckbox" type="checkbox" class="checkbox" {{#if completed }}checked{{/if}}>{{ renderDate.month }} {{ renderDate.day }} at {{ renderDate.time }} <span>{{dueStatus dueDate }}</span>
+    </div>
+    {{/if }}
+  </li>
+</ul>
+<form class="description">
+  <p>Description</p><span id="description-edit" class="link">Edit</span>
+  <p class="textarea-overlay">{{ description }}</p>
+  <textarea class="textarea-toggle" rows="1">{{ description }}</textarea>
+  <div>
+    <div class="button" value="Save">Save</div><i class="x-icon icon"></i>
+  </div>
+  <p id="description-edit-options" class="hidden">You have unsaved edits on this field. <span class="link">View edits</span> - <span class="link">Discard</span>
+  </p>
+</form>

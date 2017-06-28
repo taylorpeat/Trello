@@ -1,0 +1,13 @@
+{{#if members }}
+  <ul class="filter-list tall">
+    {{#each members }}
+      {{#if (included ../memberIds id) }}
+        <li class="dark selected" data-id={{ id }}><i class="card-member">{{ initials }}</i>{{ fullName }} ({{ username }})</li>
+      {{else}}
+        <li class="dark" data-id={{ id }}><i class="card-member">{{ initials }}</i>{{ fullName }} ({{ username }})</li>
+      {{/if }}
+    {{/each}}
+  </ul>
+{{else}}
+  <div class="empty">No Results</div>
+{{/if}}

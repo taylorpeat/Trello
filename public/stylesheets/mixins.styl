@@ -1,0 +1,78 @@
+colors = {
+  bg: rgb(0, 121, 191),
+  dropdown-bg: rgb(214, 218, 220),
+}
+
+dropdown-header()
+  position: relative
+  text-align: center
+  color: #8c8c8c
+  border-bottom: 1px solid #D6DADC
+  padding: 3px 0 3px 0
+  margin: 0 10px 0 10px
+  line-height: 30px
+  
+dropdown-header-i()
+  position: absolute
+  right: 3px
+  z-index: 2
+  color: #999
+  cursor: pointer
+  &:hover:before
+    color: #111
+    
+dropdown-input()
+  height: 34px
+  width: 100%
+  border-radius: 3px
+  box-sizing: border-box
+  border: 1px solid #CDD2D4
+  background-color: #E2E4E6
+  font: inherit
+  font-size: inherit
+  padding-left: 6px
+  color: #4d4d4d
+  &:focus
+    background-color: #fff
+    outline: none
+    box-shadow: 0.5px 0.5px 0.5px #298FCA
+    border-color: #298FCA
+    transition: background-color 0.3s
+  &:hover
+    border-color: #A5ACB0
+    
+white-button()
+  font-weight: bold
+  line-height: 32px
+  background: linear-gradient(to bottom,#fff 0,#F8F9F9 100%)
+  border: 1px solid #E2E4E6
+  border-bottom-color: #CDD2D4
+  padding-left: 10px
+  color: #444
+  border-radius: 3px
+  cursor: pointer
+  &:hover
+    background: none
+    border-color: #298FCA #298FCA #026AA7
+    background-color #298FCA
+    color: #fff
+    i:before
+      color: #fff
+  i
+    padding-right: 7px
+ 
+x-icon-close()
+  display: inline-block
+  margin-left: 9px
+  position: relative
+  top: -1px
+  &:before
+    color: #999
+    font-size: 20px
+    line-height: 30px
+    vertical-align: middle
+  &:hover:before
+    color: #4d4d4d
+
+
+

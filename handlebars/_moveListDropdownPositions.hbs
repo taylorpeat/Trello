@@ -1,0 +1,10 @@
+{{#each lists }}
+  {{#if (equal id ../currentListId )}}
+    <option selected="selected" value="">{{inc @index }}</option>
+  {{else}}  
+    <option value="{{ id }}">{{inc @index }}</option>
+  {{/if}}
+{{/each }}
+{{#unless sameBoard }}
+  <option value="">{{inc lists.length }}</option>
+{{/unless }}

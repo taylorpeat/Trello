@@ -1,0 +1,7 @@
+{{#if (equal type 'color') }}
+  <span style="background-color:{{ color }};"></span>
+{{else }}
+  <span style="background-image: url(/{{ thumb }});">
+    <div class="bg-cover">Options</div>
+  </span>
+{{/if }}

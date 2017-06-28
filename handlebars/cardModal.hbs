@@ -1,0 +1,45 @@
+<i class="x-icon icon"></i>
+<div class="cover-image">
+  {{>coverImage }}
+</div>
+{{#if archived }}
+  <div class="archived-banner">
+    <i class="file-icon icon"></i>This card is archived.
+  </div>
+{{/if }}
+<header>
+  <i class="card-icon icon"></i>
+  <textarea class="list-title">{{ title }}</textarea>
+  <p>in list <a class="link">{{listTitle listId }}</a>
+  <i class="sub-icon sm-icon{{#unless subscribed }} hidden{{/unless }}"></i></p>
+</header>
+<section class="modal-main">
+  <ul class="modal-outer-list"></ul>
+</section><!--
+--><aside class="modal-buttons">
+  <h2>Add</h2>
+  <ul>
+    <li class="member-button"><i class="person-icon sm-icon"></i>Members</li>
+    <li class="label-button"><i class="label-icon sm-icon"></i>Labels</li>
+    <li class="checklist-button"><i class="checklist-icon sm-icon"></i>Checklist</li>
+    <li class="date-button not-implemented"><i class="clock-icon sm-icon"></i>Due Date</li>
+    <li class="attachment-button not-implemented"><i class="attachment-icon sm-icon"></i>Attachment</li>
+  </ul>
+  <h2>Actions</h2>
+  <ul>
+    <li class="move-button"><i class="forward-icon sm-icon"></i>Move</li>
+    <li class="copy-button"><i class="card-icon sm-icon"></i>Copy</li>
+    <li class="subscribe-button"><i class="sub-icon sm-icon"></i>Subscribe<i class="check-icon sm-icon{{#unless subscribed }} hidden{{/unless }}"></i></li>
+    <hr>
+    {{#if archived }}
+      <li class="unarchive-button"><i class="send-icon sm-icon"></i>Send to board
+      </li><li class="red-button"><i class="minus-icon sm-icon"></i>Delete
+      </li>
+    {{else}}
+      <li class="archive-button"><i class="file-icon sm-icon "></i>Archive</li>
+    {{/if }}
+  </ul>
+  <ul class="light-list">
+    <li class="not-implemented">Share and more...</li>
+  </ul>
+</aside>

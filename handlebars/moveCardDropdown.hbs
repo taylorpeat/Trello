@@ -1,0 +1,23 @@
+{{!-- <div id="move-card" class="dropdown"> --}}
+<h2>Move Card
+  <i class="x-icon sm-icon"></i>
+</h2>
+<form>
+  <label class="dropdown-select-label">
+    <span>Board</span>
+    <select name="board-title" id="board-title" class="dropdown-select">
+      {{> moveListDropdownBoards }}
+    </select>
+  </label><label class="dropdown-select-label">
+    <span>List</span>
+    <select name="list-title" id="list-title-select" class="dropdown-select">
+      {{> dropdownLists }}
+    </select>
+  </label><label class="dropdown-select-label">
+    <span>Position</span>
+    <select name="card-position" id="card-positions" class="dropdown-select">
+      {{> dropdownCardPositions }}
+    </select>
+  </label>
+  <input type="submit" class="button" value="Move">
+</form>

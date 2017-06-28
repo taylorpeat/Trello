@@ -1,0 +1,38 @@
+<i class="back-icon icon"></i>
+<i class="x-icon icon"></i>
+<h1>Filter Cards</h1>
+<div class="menu-contents">
+  <input class="dropdown-input">
+  <p>Type to filter by term or search for labels, members, or due times.</p>
+  <hr>
+  <div class="filter-search-results">
+    <ul class="filter-list tall">
+      <li class="grey dark{{#if (included filter.labelIds 'no-ids') }} selected{{/if }}" data-label-id="no-ids">No Labels</li>
+      {{#each labels }}
+        {{>filterLabel label=this filteredLabels=../filter.labelIds }}
+      {{/each }}
+      <hr>
+      <li class="dark{{#if (included filter.memberIds 'no-ids') }} selected{{/if }}" data-member-id="no-ids">
+        <div class="member-container">
+          <div class="card-member">?</div>
+        </div>Unassigned
+      </li>
+      {{#each members }}
+        {{>filterMember member=this filteredMembers=../filter.memberIds }}
+      {{/each }}   
+      <hr>
+    </ul>
+    <ul class="filter-list">
+      <li {{#if (equal filter.date 'day') }}class="selected" {{/if }}data-date="day">Due in the next day</li>
+      <li {{#if (equal filter.date 'week') }}class="selected" {{/if }}data-date="week">Due in the next week</li>
+      <li {{#if (equal filter.date 'month') }}class="selected" {{/if }}data-date="month">Due in the next month</li>
+      <li {{#if (equal filter.date 'overdue') }}class="selected" {{/if }}data-date="overdue">Overdue</li>
+      <li {{#if (equal filter.date 'no-date') }}class="selected" {{/if }}data-date="no-date">Has no due date</li>
+      <hr>
+      <li data-match-all=""{{#unless filter.matchAll }} class="selected"{{/unless }}>Matches any label and any member</li>
+      <li data-match-all="true"{{#if filter.matchAll }} class="selected"{{/if }}>Matches all labels and all members</li>
+      <hr>
+      <li id='clear-filter'>Clear Filter</li>
+    </ul>
+  </div>
+</div>

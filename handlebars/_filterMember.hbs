@@ -1,0 +1,5 @@
+<li class="dark{{#if (included filteredMembers member.id) }} selected{{/if }}" data-member-id="{{ member.id }}">
+  <div data-member-id="{{ member.id }}" class="member-container">
+    <div class="card-member">{{ member.initials }}</div>
+  </div>{{ member.fullName }} ({{ member.username }})
+</li>

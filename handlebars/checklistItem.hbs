@@ -1,0 +1,14 @@
+<input type="checkbox" class="checkbox" {{#if completed }}checked="true"{{/if }}>
+<form>
+  <textarea class="textarea-toggle" rows="1">{{ description }}</textarea>
+  <div>
+    <div class="button" value="Save">Save</div><i class="x-icon icon"></i>
+    <div class="light-button delete-button">Delete</div>
+    <div class="light-button">Convert to Card</div>
+    <div class="light-button">
+      <i class="more-icon icon"></i>
+    </div>
+  </div>
+</form>
+<s class="">{{ description }}</s>
+<p id="description-edit-options" class="hidden">You have unsaved edits on this field. <span class="link edit-button">View edits</span> - <span class="link discard-button">Discard</span></p>
