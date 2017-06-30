@@ -15,11 +15,11 @@ Handlebars.registerPartial("boardDropdownBoard", Handlebars.template({"1":functi
 
   return "<dd data-id=\""
     + alias1(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" style=\"background-image: url(/"
+    + "\" style=\"background: url(/"
     + alias1(alias2(((stack1 = (depth0 != null ? depth0.background : depth0)) != null ? stack1.thumb : stack1), depth0))
-    + ") cover fixed;\"><div style=\"background: url(/"
+    + ") 0 0/cover\"><div style=\"background: url(/"
     + alias1(alias2(((stack1 = (depth0 != null ? depth0.background : depth0)) != null ? stack1.thumb : stack1), depth0))
-    + ") cover fixed;\"></div>";
+    + ") 0 0/cover\"></div>";
 },"5":function(container,depth0,helpers,partials,data) {
     return " starred";
 },"7":function(container,depth0,helpers,partials,data) {

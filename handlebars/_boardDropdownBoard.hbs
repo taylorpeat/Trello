@@ -2,8 +2,8 @@
   <dd data-id="{{ id }}" style="background-color: {{ background.color }}">
     <div style="background-color: {{ background.color }}"></div>
 {{else }}
-  <dd data-id="{{ id }}" style="background-image: url(/{{ background.thumb }}) cover fixed;">
-    <div style="background: url(/{{ background.thumb }}) cover fixed;"></div>
+  <dd data-id="{{ id }}" style="background: url(/{{ background.thumb }}) 0 0/cover">
+    <div style="background: url(/{{ background.thumb }}) 0 0/cover"></div>
 {{/if }}
   <div>{{ title }}
     <i class="star-icon icon{{#if favorite }} starred{{/if }}"></i>
